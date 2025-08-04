@@ -1,0 +1,83 @@
+---
+layout: default
+title: Seattle Building Permits Analysis
+permalink: /seattle-building-permits/
+---
+
+# 🏗️ Seattle Building Permits Analysis
+
+This project explored building permit data in the city of Seattle to uncover trends in development activity across neighborhoods, contractors, and project types. We completed two versions of the project — one using SQL and one using Python — as part of our graduate coursework.
+
+---
+
+## Project Summary
+
+- **Dataset:** Building permit records from [data.seattle.gov](https://data.seattle.gov/)
+- **Timeframe:** Permits applied for in **2023**
+- **Rows:** 5,596 permits
+- **Tools Used:**  
+  - SQL (MySQL queries and data cleaning)  
+  - Python (Pandas, Seaborn, Matplotlib)  
+
+---
+
+## Data Cleaning Challenges
+
+The raw data had formatting issues, including:
+- Permit descriptions spilling into other columns
+- Missing or blank address and location fields
+- Incomplete values for project type descriptors
+
+We wrote SQL scripts to realign columns and fill missing fields based on context (e.g., setting blank city/state fields to `"Seattle, WA"`).
+
+---
+
+## Key Analyses & Insights
+
+### 1. Permit Density by Zip Code
+- Zip codes 98101, 98104, and 98109 had the highest number of commercial permits.
+- Several zip codes had under 50 permits, indicating uneven development.
+
+### 2. Housing Trends
+- We mapped **Single-Family** vs **Multi-Family** developments.
+- Multi-family housing permits clustered in dense areas, signaling urban growth trends.
+
+### 3. Average Project Cost by Zip Code
+- We identified the zip codes with the **highest and lowest average costs**, using error bars to show variance.
+- This helped highlight cost-efficient areas for developers.
+
+### 4. Permit & Construction Timing
+- 50% of permits were approved within **50 days**
+- Mean construction time: **163 days**, total project time: **201 days**
+
+### 5. Contractor Activity
+- Most contractors only filed 1 permit.
+- A handful of companies showed high volume, suggesting strong market presence or specialization.
+
+---
+
+## Business Use Cases
+
+- ** Homebuyers / Investors:** Identify high-growth areas, predict neighborhood change.
+- ** Developers:** Optimize site selection, estimate timelines and cost benchmarks.
+- ** Government:** Monitor construction trends, manage public safety in high-density zones.
+
+---
+
+## 📎 Files
+
+- 📄 [SQL Version Presentation (BUS AN 512A)](https://github.com/yourusername/portfolio/blob/main/assets/Group_Project.pdf)
+- 📄 [Python Version Presentation (BUS AN 511)](https://github.com/yourusername/portfolio/blob/main/assets/Group%20Project%20-%20Purple%20Team%206.pdf)
+
+---
+
+## Reflections
+
+This project gave us hands-on experience with:
+- Complex data cleaning in SQL
+- Geospatial and statistical analysis in Python
+- Real-world urban planning implications
+- Collaborating across technical and strategic lenses
+
+---
+
