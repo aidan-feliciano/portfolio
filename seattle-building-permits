@@ -4,80 +4,111 @@ title: Seattle Building Permits Analysis
 permalink: /seattle-building-permits/
 ---
 
-# 🏗️ Seattle Building Permits Analysis
-
-This project explored building permit data in the city of Seattle to uncover trends in development activity across neighborhoods, contractors, and project types. We completed two versions of the project — one using SQL and one using Python — as part of our graduate coursework.
+# Seattle Building Permits Analysis
 
 ---
 
-## Project Summary
+## Problem
 
-- **Dataset:** Building permit records from [data.seattle.gov](https://data.seattle.gov/)
-- **Timeframe:** Permits applied for in **2023**
-- **Rows:** 5,596 permits
-- **Tools Used:**  
-  - SQL (MySQL queries and data cleaning)  
-  - Python (Pandas, Seaborn, Matplotlib)  
+How is construction activity distributed across Seattle?  
+We aimed to understand where, what, and how building projects are happening across the city, using permit data to extract trends and draw actionable conclusions for stakeholders such as real estate investors, developers, and city planners.
 
 ---
 
-## Data Cleaning Challenges
+## Data Source
 
-The raw data had formatting issues, including:
-- Permit descriptions spilling into other columns
-- Missing or blank address and location fields
-- Incomplete values for project type descriptors
-
-We wrote SQL scripts to realign columns and fill missing fields based on context (e.g., setting blank city/state fields to `"Seattle, WA"`).
+- **Dataset:** [City of Seattle – Building Permits (data.seattle.gov)](https://data.seattle.gov/)
+- **Filtered:** Permits applied for in **2023**
+- **Size:** 5,596 rows × 25 columns  
+- **Key Fields:** Permit class/type, housing units added/removed, estimated cost, dates, contractor, location (zip code + lat/long)
 
 ---
 
-## Key Analyses & Insights
+## Goal / Key Metrics
 
-### 1. Permit Density by Zip Code
-- Zip codes 98101, 98104, and 98109 had the highest number of commercial permits.
-- Several zip codes had under 50 permits, indicating uneven development.
-
-### 2. Housing Trends
-- We mapped **Single-Family** vs **Multi-Family** developments.
-- Multi-family housing permits clustered in dense areas, signaling urban growth trends.
-
-### 3. Average Project Cost by Zip Code
-- We identified the zip codes with the **highest and lowest average costs**, using error bars to show variance.
-- This helped highlight cost-efficient areas for developers.
-
-### 4. Permit & Construction Timing
-- 50% of permits were approved within **50 days**
-- Mean construction time: **163 days**, total project time: **201 days**
-
-### 5. Contractor Activity
-- Most contractors only filed 1 permit.
-- A handful of companies showed high volume, suggesting strong market presence or specialization.
+Our goal was to identify key trends in construction activity that could:
+- Reveal **high-growth neighborhoods**
+- Compare **commercial vs. residential activity**
+- Uncover **cost variations** by location
+- Analyze **contractor activity**
+- Estimate **approval and construction timelines**
 
 ---
 
-## Business Use Cases
+## Actions
 
-- ** Homebuyers / Investors:** Identify high-growth areas, predict neighborhood change.
-- ** Developers:** Optimize site selection, estimate timelines and cost benchmarks.
-- ** Government:** Monitor construction trends, manage public safety in high-density zones.
+The primary tools we used for the analysis were SQL and Python. Our analysis involved multiple stages:
 
----
+**1. Data Cleaning**
+- Repaired column shifts due to messy text in `Description`
+- Reassigned blank `OriginalCity`/`OriginalState` to "Seattle, WA"
+- Corrected null or misaligned values for permit metadata
 
-## 📎 Files
+**2. Exploratory Data Analysis**
+- Grouped permits by zip code and class
+- Aggregated permit counts, costs, housing units
+- Visualized approval and construction durations
 
-- 📄 [SQL Version Presentation (BUS AN 512A)](https://github.com/yourusername/portfolio/blob/main/assets/Group_Project.pdf)
-- 📄 [Python Version Presentation (BUS AN 511)](https://github.com/yourusername/portfolio/blob/main/assets/Group%20Project%20-%20Purple%20Team%206.pdf)
-
----
-
-## Reflections
-
-This project gave us hands-on experience with:
-- Complex data cleaning in SQL
-- Geospatial and statistical analysis in Python
-- Real-world urban planning implications
-- Collaborating across technical and strategic lenses
+**3. Methods Used**
+- SQL queries for aggregation, joins, filtering, date diffs
+- Python (Pandas, Matplotlib, Seaborn) for charts and visualizations
+- Power BI for supplemental dashboard visualizations
 
 ---
 
+## Results
+
+### 📍 Permit Density by Zip Code
+- Zip codes **98101**, **98104**, and **98109** had the most commercial permits
+- Other zip codes had fewer than 50 permits — showing geographic concentration
+
+![Permit by Zip](./assets/permits_by_zip.png)
+
+---
+
+### Housing Development Trends
+- Multifamily units clustered in dense, high-growth zip codes
+- Single-family housing remained more spread across the city
+
+![Housing Units](./assets/housing_units_distribution.png)
+
+---
+
+### Project Cost Analysis
+- Identified both **high-cost** and **cost-efficient** neighborhoods
+- Zip codes with large **cost variance** indicate mixed development types
+
+![Project Costs](./assets/project_costs_avg_max_min.png)
+
+---
+
+### Timeline Insights
+- Median permit approval time: ~50 days
+- Mean construction time: 163 days  
+- Mean total project time: 201 days
+
+---
+
+## Insights and Next Steps
+
+### Key Insights:
+- **Developers** should target high-growth areas like 98101 for commercial projects
+- **Homebuyers/investors** can spot rising neighborhoods based on permit activity
+- **Contractors** can benchmark approval timelines and project costs
+- **Government planners** may use heatmaps and zip-level activity for infrastructure planning
+
+### Challenges:
+- Data cleaning was critical due to structural inconsistencies
+- Missing location data required careful handling
+- Visualizing dense zip code activity made it important to simplify maps
+
+### Next Steps:
+- Integrate this data with **property values** or **rental rates**
+- Analyze **time series** trends (e.g., seasonality in applications)
+- Use **clustering or PCA** for dimensionality reduction across project types
+
+---
+
+📎 View the original presentation decks:
+- [SQL Project (BUS AN 512A)](./assets/Group_Project.pdf)
+- [Python Project (BUS AN 511)](./assets/Group%20Project%20-%20Purple%20Team%206.pdf)
