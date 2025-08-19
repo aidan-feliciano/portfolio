@@ -1,0 +1,68 @@
+---
+layout: default
+title: Seattle Building Permits Analysis
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Seattle Building Permits Analysis</title>
+</head>
+<body>
+
+<h1>Seattle Building Permits Analysis</h1>
+
+<h2>Problem</h2>
+<p>
+How is construction activity distributed across Seattle? We aimed to understand where, what, and how building projects are happening across the city using permit data to uncover trends and draw conclusions for real estate stakeholders.
+</p>
+
+<h2>Data Source</h2>
+<p>
+We used 2023 building permit data from the <a href="https://data.seattle.gov">City of Seattle Open Data Portal</a>. The dataset contains 5,596 permits with attributes like project cost, housing units, contractor info, zip code, and more.
+</p>
+
+<h2>Goal / Key Metrics</h2>
+<ul>
+  <li>Identify high-growth zip codes</li>
+  <li>Compare commercial vs. residential permit activity</li>
+  <li>Estimate project costs, timelines, and contractor trends</li>
+</ul>
+
+<h2>Actions</h2>
+<ul>
+  <li>Cleaned messy fields using SQL (e.g., correcting shifted columns)</li>
+  <li>Explored distributions in Python with pandas & matplotlib</li>
+  <li>Grouped by zip, permit class, contractor, and cost brackets</li>
+</ul>
+
+<h2>Results</h2>
+<ul>
+  <li>Zip codes 98101, 98104, and 98109 had the most commercial activity</li>
+  <li>50% of permits approved within 50 days; average construction time = 163 days</li>
+  <li>Most contractors only handled one project; a few did 3+</li>
+</ul>
+
+<h2>Insights and Next Steps</h2>
+<ul>
+  <li>Homebuyers: focus on low-permit areas for quieter neighborhoods</li>
+  <li>Developers: prioritize zip codes with high average project cost and fast approvals</li>
+  <li>City planners: use permit density to target infrastructure growth</li>
+</ul>
+
+<h2>Visuals</h2>
+<p>
+  <img src="./assets/permits_by_zip.png" alt="Permit Volume by Zip" width="700">
+  <br>
+  <img src="./assets/project_costs_avg_max_min.png" alt="Project Cost by Zip" width="700">
+</p>
+
+<h2>Presentation Files</h2>
+<ul>
+  <li><a href="./assets/Group_Project.pdf">SQL Version</a></li>
+  <li><a href="./assets/Group%20Project%20-%20Purple%20Team%206.pdf">Python Version</a></li>
+</ul>
+
+</body>
+</html>
