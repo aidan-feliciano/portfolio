@@ -106,9 +106,3 @@ The primary tools we used for the analysis were SQL and Python. Our analysis inv
 - Integrate this data with **property values** or **rental rates**
 - Analyze **time series** trends (e.g., seasonality in applications)
 - Use **clustering or PCA** for dimensionality reduction across project types
-
----
-
-📎 View the original presentation decks:
-- [SQL Project (BUS AN 512A)](./assets/Group_Project.pdf)
-- [Python Project (BUS AN 511)](./assets/Group%20Project%20-%20Purple%20Team%206.pdf)
