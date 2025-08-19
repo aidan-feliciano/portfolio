@@ -15,29 +15,35 @@ title: Seattle Building Permits Analysis
 
 <h2>Problem</h2>
 <p>
-How is construction activity distributed across Seattle? We aimed to understand where, what, and how building projects are happening across the city using permit data to uncover trends and draw conclusions for real estate stakeholders.
+How is construction activity distributed across Seattle? We aimed to understand where, what, and how building projects are happening across the city using permit data to uncover trends and draw conclusions for real estate stakeholders and potential homebuyers.
 </p>
 
-<h2>Data Source</h2>
+<h2>Dataset Overview</h2>
 <p>
-We used 2023 building permit data from the <a href="https://data.seattle.gov">City of Seattle Open Data Portal</a>. The dataset contains 5,596 permits with attributes like project cost, housing units, contractor info, zip code, and more.
+We used 2023 building permit data from the <a href="https://data.seattle.gov">City of Seattle Open Data Portal</a>. The dataset contains 5,596 rows, each representing a unique building permit. There were 25 columns representing attributes for each permit, such as project cost, permit class, housing units, zip code, and more.
 </p>
 
 <h2>Goal / Key Metrics</h2>
+<p>
+Our objective was to find insights that could help real estate investors or potential homebuyers identify and target potential neighborhoods in whcih to purchase/invest in property. Key metrics included: 
+</p>
 <ul>
-  <li>Identify high-growth zip codes</li>
-  <li>Compare commercial vs. residential permit activity</li>
-  <li>Estimate project costs, timelines, and contractor trends</li>
+  <li>Identifying high-growth zip codes</li>
+  <li>Understanding the distribution of different permit types </li>
+  <li>Comparing commercial vs. residential permit activity>
+  <li>Estimating project costs and approval timelines</li>
 </ul>
 
 <h2>Actions</h2>
+<p>
+We completed several steps during our analysis: 
+</p>
 <ul>
-  <li>Cleaned messy fields using SQL (e.g., correcting shifted columns)</li>
-  <li>Explored distributions in Python with pandas & matplotlib</li>
-  <li>Grouped by zip, permit class, contractor, and cost brackets</li>
+  <li>Data cleansing and preprocessing: Addressing missing values, data spillage, and correcting datatypes</li>
+  <li>Exploratory data analysis: Visualizing permits by class and zipcode, plotting distributions for permit approval and building construction time</li>
 </ul>
 
-<h2>Results</h2>
+<h2>Key Insights</h2>
 <ul>
   <li>Zip codes 98101, 98104, and 98109 had the most commercial activity</li>
   <li>50% of permits approved within 50 days; average construction time = 163 days</li>
@@ -64,5 +70,12 @@ We used 2023 building permit data from the <a href="https://data.seattle.gov">Ci
   <li><a href="./assets/Group%20Project%20-%20Purple%20Team%206.pdf">Python Version</a></li>
 </ul>
 
+<h2>Tools</h2>
+<ul>
+  <li>Python for data cleansing, and visualizations (matplotlib and seaborn)</li>
+  <li>SQL for exploratory analysis</li>
+</ul>
+
+  
 </body>
 </html>
