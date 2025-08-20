@@ -4,29 +4,69 @@ title: Seattle Building Permits Analysis
 ---
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Seattle Building Permits Analysis</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 20px;
+      background-color: #f8f9fa;
+    }
+    .navbar {
+      margin-bottom: 20px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 10px;
+    }
+  </style>
 </head>
+
+  
 <body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">🏠 Aidan Feliciano</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="seattle-building-permits.html">Seattle Project</a>
+        </li>
+        <!-- Add more nav items as needed -->
+      </ul>
+    </div>
+  </div>
+</nav>
+
 
 <h1>Seattle Building Permits Analysis</h1>
 
 <h2>Problem</h2>
 <p>
-How is construction activity distributed across Seattle? We aimed to understand where, what, and how building projects are happening across the city using permit data to uncover trends and draw conclusions for real estate stakeholders and potential homebuyers.
+  How is construction activity distributed across Seattle? We aimed to understand where, what, and how building projects are happening across 
+  the city by using permit data to uncover trends and draw actionable insights for real estate stakeholders and potential homebuyers.
 </p>
 
 <h2>Dataset Overview</h2>
 <p>
-We used 2023 building permit data from the <a href="https://data.seattle.gov">City of Seattle Open Data Portal</a>. The dataset contains 5,596 rows, each representing a unique building permit. There were 25 columns representing attributes for each permit, such as project cost, permit class, housing units, zip code, and more.
+  We used 2023 building permit data from the <a href="https://data.seattle.gov">City of Seattle Open Data Portal</a>. 
+  The dataset contains 5,596 records, each representing a unique building permit. 
+  There were 25 columns representing attributes for each permit, such as project cost, permit class, housing units, zip code, and more.
 </p>
 
+  
 <h2>Goal / Key Metrics</h2>
 <p>
-Our objective was to find insights that could help real estate investors or potential homebuyers identify and target potential neighborhoods in whcih to purchase/invest in property. Key metrics included: 
+  Our objective was to identify insights that could help real estate investors or homebuyers target neighborhoods in which to purchase or invest. Key metrics included: 
 </p>
+  
 <ul>
   <li>Identifying high-growth zip codes</li>
   <li>Comparing commercial vs. residential permit activity
@@ -65,7 +105,7 @@ We completed several steps during our analysis:
   </p>
 
 <h3>Permit approval times:</h3>
-  <p>50% of permits were approved within 50 days, with the mean approval time equaling 79 days</p>
+  <p>50% of permits were approved within 50 days, while the average approval time was 79 days.</p>
   <p> 
     <img src="Seattle Building Permits - days to approval distribution.png" alt="SQL code to fix data spillage" style="max-width: 100%; height: auto; margin-top: 20px;"><br>
   </p>
@@ -80,9 +120,18 @@ We completed several steps during our analysis:
 
 <h2>Key Insights</h2>
   
-<p>Real estate investors or potential home buyers who want to purchase properties in areas with a lot of active or planned development (i.e., areas that may boom in the next few years and therefore bring more traffic or drive up real estate prices) may want to consider building in the ZIP codes with high numbers of permits: 98115, 98103, 98117, and 98118. The same may be true for real estate developers, if they’re looking to develop new properties in areas where a lot of development has recently happened or is planned. <br><br>
-Potential home buyers looking for quiet neighborhoods that will not experience significant change or development may want to focus on the ZIP codes with fewer permits. <br><br>
-Additionally, by knowing the average project costs for each Zip Code, developers can better allocate their finances. They also may be able to execute more financially feasible projects by selecting areas with lower average project costs
+<p>
+  Real estate investors or potential home buyers who want to purchase properties in areas with a lot of active or planned development 
+  (i.e., areas that may boom in the next few years and therefore bring more traffic or drive up real estate prices) may want to consider building
+  in the ZIP codes with high numbers of permits: 98115, 98103, 98117, and 98118. The same may be true for real estate developers, 
+  if they’re looking to develop new properties in areas where a lot of development has recently happened or is planned. 
+  <br>
+  <br>
+  Potential home buyers looking for quiet neighborhoods that will not experience significant change or development may want to focus on the ZIP codes with fewer permits.
+  <br>
+  <br>
+  Additionally, by knowing the average project costs for each Zip Code, developers can better allocate their finances. They also may be able to execute more financially 
+  feasible projects by selecting areas with lower average project costs.
 </p>
 
   
