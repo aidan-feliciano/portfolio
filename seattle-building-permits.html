@@ -127,6 +127,23 @@
       font-size: 0.95rem;
       margin-top: 3rem;
     }
+    
+    .date-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      font-style: italic;
+      color: #6c757d;
+    }
+    
+    .date-divider hr {
+      border-top: 1px solid #dee2e6;
+      margin: 0;
+      height: 1px;
+    }
+  
+
   </style>
 </head>
 
@@ -143,6 +160,13 @@
   </nav>
 
   <main>
+
+    <div class="date-divider my-5 text-center text-muted">
+      <hr class="d-inline-block w-25 me-3">
+      <span>July 30, 2024</span>
+      <hr class="d-inline-block w-25 ms-3">
+    </div>
+    
     <h1>Seattle Building Permits Analysis</h1>
 
     <h2>Problem</h2>
@@ -215,7 +239,7 @@
   </main>
 
   <footer>
-    Aidan Feliciano | aidan.e.feliciano@gmail.com | (203) 832-6555
+    <a href="https://www.linkedin.com/in/aidan-feliciano" target="_blank" class="text-light text-decoration-none">LinkedIn</a> | aidan.e.feliciano@gmail.com | (203) 832-6555
   </footer>
 </body>
 </html>
