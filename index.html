@@ -2,48 +2,67 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Aidan Feliciano | Portfolio</title>
+  <title>Aidan Feliciano Portfolio</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
       background-color: #f8f9fa;
-      padding-top: 70px;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
     }
-    .card-img-top {
-      object-fit: cover;
-      height: 200px;
+
+    /* Custom gradient nav bar */
+    .custom-navbar {
+      background: linear-gradient(to right, #2e2e2e, #6e6e6e);
+      padding: 20px 40px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
     }
-    .navbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1030;
+
+    .custom-navbar a {
+      color: white;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-decoration: none;
+      margin-right: 30px;
+    }
+
+    .custom-navbar a:hover {
+      text-decoration: underline;
+    }
+
+    .project-tile {
+      margin: 20px;
+    }
+
+    .card {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
     }
   </style>
 </head>
-
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">Aidan Feliciano</a>
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About Me</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
-  <!-- Grid of Projects -->
-  <div class="container mt-5">
-    <div class="row row-cols-1 row-cols-md-2 g-4">
+  <!-- Custom Nav Bar -->
+  <div class="custom-navbar">
+    <a href="index.html">Academic Achievements</a>
+    <a href="about.html">About Me</a>
+    <a href="experience.html">Education and Work Experience</a>
+  </div>
 
-      <!-- Example Card: Seattle Permits -->
-      <div class="col">
-        <div class="card h-100">
-          <img src="Seattle Building Permits - high growth zip code visual.png" class="card-img-top" alt="Seattle Permits">
+  <!-- Project Cards Section -->
+  <div class="container mt-4">
+    <div class="row">
+      
+      <!-- Project 1: Seattle Building Permits -->
+      <div class="col-md-6 project-tile">
+        <div class="card">
+          <img src="assets/seattle_map_thumb.png" class="card-img-top" alt="Seattle Map">
           <div class="card-body">
             <h5 class="card-title">Seattle Building Permits</h5>
             <p class="card-text">Visualizing permit trends and uncovering growth zones in Seattle.</p>
@@ -52,15 +71,14 @@
         </div>
       </div>
 
-      <!-- Add More Cards Below -->
-      <!-- Example Card -->
+      <!-- Add more projects like this -->
       <!--
-      <div class="col">
-        <div class="card h-100">
-          <img src="your-image.png" class="card-img-top" alt="Project Image">
+      <div class="col-md-6 project-tile">
+        <div class="card">
+          <img src="assets/another_project.png" class="card-img-top" alt="Another Project">
           <div class="card-body">
             <h5 class="card-title">Project Title</h5>
-            <p class="card-text">Short project description.</p>
+            <p class="card-text">Short project description here.</p>
             <a href="project-page.html" class="btn btn-primary">View Project</a>
           </div>
         </div>
