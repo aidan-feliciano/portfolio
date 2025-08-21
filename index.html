@@ -1,38 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Aidan Feliciano – Portfolio</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background-color: #343a40;
+      color: white;
+    }
+    .project-tile {
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+    .project-tile:hover {
+      transform: scale(1.02);
+    }
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;
+    }
+  </style>
 </head>
-<body class="has-background-light">
+<body>
 
-<section class="section">
-  <div class="container">
-    <h1 class="title is-2 has-text-centered">Welcome to My Portfolio</h1>
-    <p class="subtitle is-5 has-text-centered">
-      Master of Science in Business Analytics focused on leveraging data science and visualization to drive strategic decision-making in the tech and consumer products space
-    </p>
-
-    <hr>
-
-    <h2 class="title is-4">Projects</h2>
-    <ul>
-      <li><a class="has-text-link" href="./seattle-building-permits.html">Seattle Building Permits Analysis</a></li>
-      <!-- Add more links here as you create more project pages -->
-    </ul>
-
-    <h2 class="title is-4 mt-5">About Me</h2>
-    <p>
-      I’m passionate about using data to solve real-world problems. My work spans urban planning, marketing analytics, machine learning, and more.
-    </p>
-
-    <div class="buttons is-centered mt-5">
-      <a class="button is-link is-light" href="index.html">Home</a>
-      <a class="button is-info is-light" href="seattle-building-permits.html">Seattle Building Permits Project</a>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Aidan Feliciano</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+      </ul>
     </div>
   </div>
-</section>
+</nav>
 
+<!-- Hero Section -->
+<div class="hero">
+  <h1>Aidan Feliciano</h1>
+  <p>Data-driven insights for real-world decisions</p>
+</div>
+
+<!-- Project Grid -->
+<div class="container my-5" id="projects">
+  <h2 class="mb-4">Projects</h2>
+  <div class="row g-4">
+
+    <!-- Project 1 -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card project-tile">
+        <img src="Seattle Building Permits - high growth zip code visual.png" class="card-img-top" alt="Seattle Permits Map">
+        <div class="card-body">
+          <h5 class="card-title">Seattle Building Permits</h5>
+          <p class="card-text">Exploring development trends across Seattle neighborhoods using city permit data.</p>
+          <a href="seattle-building-permits.html" class="btn btn-outline-primary">View Project</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add more project cards here -->
+    <!-- Example: copy above block and change content -->
+    
+  </div>
+</div>
+
+<!-- About Section -->
+<div class="container mb-5" id="about">
+  <h2>About Me</h2>
+  <p>
+    I'm a data analyst passionate about using storytelling, analytics, and visualizations to uncover insights and solve complex problems.
+    My work spans urban planning, marketing analytics, and machine learning, driven by a curiosity to understand the "why" behind data.
+  </p>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3">
+  © 2025 Aidan Feliciano
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
