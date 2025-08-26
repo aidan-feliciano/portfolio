@@ -114,6 +114,7 @@
   <h1 style="text-align: left;">Website Cookie Analysis - December 2024</h1>
   
   <h2 style="text-align: left;">Problem</h2>
+  
   <p>
     How can businesses utilize website cookie data to better understand, target, and extract revenue from their online customer base? 
     This project explores user behavior patterns, revenue drivers, and predictors of transaction activity using cookie-level data.
@@ -123,7 +124,7 @@
   <p>
     We used anonymized <strong>cookie-level</strong> web data from an online store, spanning from August 1, 2010 to January 31, 2011. 
     The dataset contains over 16,000 records, each representing a "website session" where user activity was tracked. 
-    A <i>cookie</i> is a packet of data used to identify users and monitor how they navigate the site across sessions. 
+    A <strong>cookie</strong> is a packet of data used to identify users and monitor how they navigate the site across sessions. 
     The data includes variables such as bounces, time on site, number of visits, revenue, and traffic source.
   </p>
 
@@ -138,20 +139,27 @@
   <h2 style="text-align: left;">Exploration & Segmentation</h2>
   <p>
     Users originated from 3,570 different cities and 697 regions, with top cities including New York, Moscow, Kyiv, and London.
-    Engagement levels were segmented based on time spent on site: low (0–28 min), medium (29–87 min), and high (87+ min). 
+    Engagement levels were segmented based on time spent on site: 
+    <ul>
+      <li><strong>Low:</strong> (0–28 min)</li>medium , . 
+      <li><strong>Medium:</strong> (29–87 min)</li>
+      <li><strong>High:</strong>(87+ min)</li>
+    </ul>
     Interestingly, referral sources were consistently the lowest driver of revenue across all segments.
   </p>
+    
   <p>
-    We also observed seasonal patterns typical of ecommerce behavior—spikes in site visits, revenue, and session time leading up 
+    We also observed seasonal patterns typical of ecommerce behavior, which is characterized by spikes in site visits, revenue, and session time leading up 
     to the holiday season (November–December), followed by a sharp drop in January.
   </p>
+    
   <p>INSERT WEBSITE COOKIE SCREENSHOT</p>
 
   <h2 style="text-align: left;">Search Engines & Revenue</h2>
   <p>
     We analyzed organic traffic sources using a multiple linear regression model. Visits from Google stood out with a strong 
-    positive correlation to revenue—each Google visit generated an estimated $9.37, holding all other variables constant. 
-    Overall, each additional visit drove approximately $15.86 in revenue, while bounces resulted in a revenue loss of $19.55. 
+    positive correlation to revenue. Each Google visit generated an estimated <strong>$9.37</strong>, holding all other variables constant. 
+    Overall, each additional visit drove approximately <strong>$15.86</strong> in revenue, while bounces resulted in a revenue loss of <strong>$19.55.</strong> 
     These findings reinforce the importance of Google-based SEO strategies.
   </p>
 
@@ -160,7 +168,7 @@
     We developed both logistic regression and random forest models to predict whether a user would complete a transaction. 
     Logistic regression was ultimately chosen for its simplicity and interpretability, delivering an accuracy of 89.81%.
     Significant predictors included the number of visits (positive), new visitor status (positive), and bounce behavior (strongly negative). 
-    Organic traffic users were found to be 1.5x more likely to transact than those from other channels.
+    Organic traffic users were found to be <strong>1.5x more likely</strong> to transact than those from other channels.
   </p>
 
   <h2 style="text-align: left;">Scoring & Targeting</h2>
@@ -174,7 +182,7 @@
   <h2 style="text-align: left;">Business Insights</h2>
   <p>
     Our findings point to several strategic recommendations. First, businesses should double down on SEO strategies with 
-    a focus on Google—its organic traffic generates the highest return. Second, re-engagement campaigns that drive more return visits 
+    a focus on Google; its organic traffic generates the highest return. Second, re-engagement campaigns that drive more return visits 
     from previously engaged users can boost revenue. Retargeting, email follow-ups, and personalized promotions are key tools here.
   </p>
   <p>
