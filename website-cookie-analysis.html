@@ -111,72 +111,78 @@
   </nav>
 
   <main>
-    <h1>Website Cookie Analysis - December 2024</h1>
-    
-    <h2>Problem</h2>
-      <p>How can businesses utilize website cookie data to better understand, target, and extract revenue from their online customer base? This project aims to understand and analyze behavior patterns, revenue drivers, and predictors of customer transactions.</p>
+  <h1 style="text-align: left;">Website Cookie Analysis - December 2024</h1>
+  
+  <h2 style="text-align: left;">Problem</h2>
+  <p>
+    How can businesses utilize website cookie data to better understand, target, and extract revenue from their online customer base? 
+    This project explores user behavior patterns, revenue drivers, and predictors of transaction activity using cookie-level data.
+  </p>
 
-    <h2>Dataset Overview </h2>
-    <p>
-      We used anonymized <strong>cookie-level</strong> web data from an online store. The data spans from 8/1/2010 to 1/31/2011. There are over 16,000 records, with each representing a "website session," 
-      where the online store tracks user activity on the website. To clarify, a <i>cookie</i> is a packet of data sent by a web server to a browser and then returned 
-      back by the browser each time the user subsequently accesses the same server. Cookies are used to identify users and track their activity. Below is the full data dictionary.
-    </p>
+  <h2 style="text-align: left;">Dataset Overview</h2>
+  <p>
+    We used anonymized <strong>cookie-level</strong> web data from an online store, spanning from August 1, 2010 to January 31, 2011. 
+    The dataset contains over 16,000 records, each representing a "website session" where user activity was tracked. 
+    A <i>cookie</i> is a packet of data used to identify users and monitor how they navigate the site across sessions. 
+    The data includes variables such as bounces, time on site, number of visits, revenue, and traffic source.
+  </p>
 
-    <p>INSERT DATA DICTIONARY</p>
-    
-    <h2>Data Preparation & Cleaning</h2>
-    <ul>
-      <li>Dropped columns where all values were either 1 or 0 (e.g., Nuber of Records, goalCompletionsAll).</li>
-      <li>Removed ~200 rows with missing values.</li>
-    </ul>
+  <p>INSERT DATA DICTIONARY</p>
 
-    <h2>Exploration & Segmentation</h2>
-    <ul>
-      <li>There were 3,570 different cities representing 697 different regions</li>
-      <li>Top cities included New York, Moscow, Kyiv, and London.</li>
-      <li>Users were segmented by engagement level (based on time on site):
-        <ul>
-          <li>Low: 0–28 min</li>
-          <li>Medium: 29–87 min</li>
-          <li>High: 87+ min</li>
-        </ul>
-      </li>
-      <p>INSERT WEBSITE COOKIE SCREENSHOT</p>
-      <p>We can see from the screenshot above that the referral process needs attention, as it is the lowest driver of revenue by a significant portion for all three engagement levels.</p>
-      <p>We also found that the online store follows a seasonality that is expected in ecommerce, where we see higher webstore traffic, revenue, and time spent on site leading up the US holiday season (November and December), and then a sharp decrease after.</p>
-    </ul>
+  <h2 style="text-align: left;">Data Preparation & Cleaning</h2>
+  <ul>
+    <li>Removed redundant binary columns like <code>goalCompletionsAll</code> that contained only 1s or 0s.</li>
+    <li>Dropped approximately 200 rows with missing values to clean the dataset.</li>
+  </ul>
 
-    <h2>Search Engines & Revenue</h2>
-    <p>We ran a multiple linear regression on organic traffic to determine search engines' impact on revenue. Key findings:</p>
-    <ul>
-      <li><strong>Google</strong> had a significant positive effect, adding ~$9.37 per visit.</li>
-      <li>Each visit added ~$15.86 to revenue; each bounce lost ~$19.55.</li>
-    </ul>
+  <h2 style="text-align: left;">Exploration & Segmentation</h2>
+  <p>
+    Users originated from 3,570 different cities and 697 regions, with top cities including New York, Moscow, Kyiv, and London.
+    Engagement levels were segmented based on time spent on site: low (0–28 min), medium (29–87 min), and high (87+ min). 
+    Interestingly, referral sources were consistently the lowest driver of revenue across all segments.
+  </p>
+  <p>
+    We also observed seasonal patterns typical of ecommerce behavior—spikes in site visits, revenue, and session time leading up 
+    to the holiday season (November–December), followed by a sharp drop in January.
+  </p>
+  <p>INSERT WEBSITE COOKIE SCREENSHOT</p>
 
-    <h2>Predicting Transactions</h2>
-    <p>We tested both logistic regression and random forest to predict whether users would make a transaction.</p>
-    <ul>
-      <li><strong>Logistic regression</strong> was chosen for simplicity, with an accuracy of 89.81%.</li>
-      <li><strong>Significant predictors</strong>: medium (organic), new visits, visits (+); bounces (–).</li>
-      <li>Organic users were 1.5× more likely to transact than others.</li>
-    </ul>
+  <h2 style="text-align: left;">Search Engines & Revenue</h2>
+  <p>
+    We analyzed organic traffic sources using a multiple linear regression model. Visits from Google stood out with a strong 
+    positive correlation to revenue—each Google visit generated an estimated $9.37, holding all other variables constant. 
+    Overall, each additional visit drove approximately $15.86 in revenue, while bounces resulted in a revenue loss of $19.55. 
+    These findings reinforce the importance of Google-based SEO strategies.
+  </p>
 
-    <h2>Scoring & Targeting</h2>
-    <p>Using predicted probabilities, we prioritized users for targeting:</p>
-    <ul>
-      <li><strong>Top 102 users</strong> delivered ~100 transactions (limited supply rule).</li>
-      <li><strong>Top 953 users</strong> had a transaction rate above 50% (marginal supply rule).</li>
-    </ul>
+  <h2 style="text-align: left;">Predicting Transactions</h2>
+  <p>
+    We developed both logistic regression and random forest models to predict whether a user would complete a transaction. 
+    Logistic regression was ultimately chosen for its simplicity and interpretability, delivering an accuracy of 89.81%.
+    Significant predictors included the number of visits (positive), new visitor status (positive), and bounce behavior (strongly negative). 
+    Organic traffic users were found to be 1.5x more likely to transact than those from other channels.
+  </p>
 
-    <h2>Business Insights</h2>
-    <ul>
-      <li>Focus SEO efforts on Google keywords and rankings.</li>
-      <li>Invest in partnerships and re-engagement campaigns to drive visits.</li>
-      <li>Improve site experience to reduce bounce rates (chatbots, mobile-first design).</li>
-    </ul>
+  <h2 style="text-align: left;">Scoring & Targeting</h2>
+  <p>
+    Using predicted transaction probabilities, we developed two targeting strategies. The first, a <strong>limited supply rule</strong>, 
+    allows the business to achieve 100 transactions by targeting just the top 102 users ranked by transaction probability.
+    The second, a <strong>marginal supply rule</strong>, targets the top 953 users, maintaining a transaction rate above 50%. 
+    These scoring approaches enable precise campaign targeting, optimizing outreach efforts and budget allocation.
+  </p>
 
-  </main>
+  <h2 style="text-align: left;">Business Insights</h2>
+  <p>
+    Our findings point to several strategic recommendations. First, businesses should double down on SEO strategies with 
+    a focus on Google—its organic traffic generates the highest return. Second, re-engagement campaigns that drive more return visits 
+    from previously engaged users can boost revenue. Retargeting, email follow-ups, and personalized promotions are key tools here.
+  </p>
+  <p>
+    Third, user experience should be optimized to reduce bounce rates, which are closely tied to lost revenue. We recommend mobile-first 
+    design, clear navigation, faster page loads, and real-time customer support via chatbots or live agents. Together, these changes 
+    can improve conversion efficiency and unlock greater value from website traffic.
+  </p>
+</main>
 
   <footer class="site-footer">
     <a href="https://www.linkedin.com/in/aidan-feliciano" target="_blank">LinkedIn</a> |
