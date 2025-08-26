@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Website Cookie Analysis | Aidan Feliciano</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f5f5f5;
+      color: #222;
+    }
+
+    header {
+      background-color: #2e3337;
+      padding: 2rem 1rem;
+      text-align: center;
+      color: white;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+
+    nav {
+      background-color: #1e1f21;
+      display: flex;
+      justify-content: center;
+      padding: 0.75rem;
+    }
+
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+      padding-bottom: 0.25rem;
+      border-bottom: 2px solid transparent;
+    }
+
+    nav a.active, nav a:hover {
+      color: #fff;
+      border-bottom: 2px solid #fff;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin: 2rem 0 1rem;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    ul {
+      margin: 1rem 0 1.5rem 1.5rem;
+      line-height: 1.6;
+    }
+
+    .site-footer {
+      background-color: #2e3337;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .site-footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .site-footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Aidan Feliciano</h1>
+    <p>Data-driven insights for real-world decisions</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Projects</a>
+    <a href="about.html">About Me</a>
+    <a href="experience.html">Education and Work Experience</a>
+  </nav>
+
+  <main>
+    <h2>Website Cookie Analysis</h2>
+
+    <p>This project analyzes over 16,000 cookie-level web sessions for an online store. Each entry represents a user's interaction with the website, enabling analysis of behavior patterns, revenue drivers, and predictors of customer transactions.</p>
+
+    <h2>Data Preparation & Cleaning</h2>
+    <ul>
+      <li>Dropped columns with only 1s or 0s (e.g., goal completions, transaction rate).</li>
+      <li>Removed ~200 rows with missing values.</li>
+    </ul>
+
+    <h2>Exploration & Segmentation</h2>
+    <ul>
+      <li>Sessions spanned from August 2010 to January 2011.</li>
+      <li>Top cities included New York, Moscow, Kyiv, and London.</li>
+      <li>Users were segmented by engagement level (based on time on site):
+        <ul>
+          <li>Low: 0–28 min</li>
+          <li>Medium: 29–87 min</li>
+          <li>High: 87+ min</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h2>Search Engines & Revenue</h2>
+    <p>We ran a multiple linear regression on organic traffic to determine search engines' impact on revenue. Key findings:</p>
+    <ul>
+      <li><strong>Google</strong> had a significant positive effect, adding ~$9.37 per visit.</li>
+      <li>Each visit added ~$15.86 to revenue; each bounce lost ~$19.55.</li>
+    </ul>
+
+    <h2>Predicting Transactions</h2>
+    <p>We tested both logistic regression and random forest to predict whether users would make a transaction.</p>
+    <ul>
+      <li><strong>Logistic regression</strong> was chosen for simplicity, with an accuracy of 89.81%.</li>
+      <li><strong>Significant predictors</strong>: medium (organic), new visits, visits (+); bounces (–).</li>
+      <li>Organic users were 1.5× more likely to transact than others.</li>
+    </ul>
+
+    <h2>Scoring & Targeting</h2>
+    <p>Using predicted probabilities, we prioritized users for targeting:</p>
+    <ul>
+      <li><strong>Top 102 users</strong> delivered ~100 transactions (limited supply rule).</li>
+      <li><strong>Top 953 users</strong> had a transaction rate above 50% (marginal supply rule).</li>
+    </ul>
+
+    <h2>Business Insights</h2>
+    <ul>
+      <li>Focus SEO efforts on Google keywords and rankings.</li>
+      <li>Invest in partnerships and re-engagement campaigns to drive visits.</li>
+      <li>Improve site experience to reduce bounce rates (chatbots, mobile-first design).</li>
+    </ul>
+
+    <p><em>Team Members: Javin Vora, Aidan Feliciano, Suzy Eiffert, Shobhit Makhija, Xinyi Zhang</em></p>
+  </main>
+
+  <footer class="site-footer">
+    <a href="https://www.linkedin.com/in/aidan-feliciano" target="_blank">LinkedIn</a> |
+    aidan.e.feliciano@gmail.com | (203) 832-6555
+  </footer>
+</body>
+</html>
