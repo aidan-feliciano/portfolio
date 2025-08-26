@@ -1,82 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>About Me</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aidan Feliciano | About Me</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-      background-color: #f8f9fa;
-      padding-top: 60px;
+      font-family: 'Inter', sans-serif;
+      background-color: #f5f5f5;
+      color: #222;
     }
-    h1, h2 {
+
+    header {
+      background-color: #2e3337;
+      padding: 2rem 1rem;
       text-align: center;
-      margin-bottom: 30px;
+      color: white;
     }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+
+    nav {
+      background-color: #1e1f21;
+      display: flex;
+      justify-content: center;
+      padding: 0.75rem;
+    }
+
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+      padding-bottom: 0.25rem;
+      border-bottom: 2px solid transparent;
+    }
+
+    nav a.active,
+    nav a:hover {
+      color: #fff;
+      border-bottom: 2px solid #fff;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
     .gallery img {
+      max-width: 300px;
       width: 100%;
       height: auto;
-      border-radius: 10px;
-      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     }
-    footer {
-      background-color: #1f1f1f;
+
+    .site-footer {
+      background-color: #2e3337;
       color: white;
       text-align: center;
-      padding: 20px;
-      margin-top: 60px;
+      padding: 1rem;
+      font-size: 0.95rem;
     }
-    footer a {
+
+    .site-footer a {
       color: white;
       text-decoration: none;
     }
+
+    .site-footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
+
 <body>
+  <header>
+    <h1>Aidan Feliciano</h1>
+    <p>Data-driven insights for real-world decisions</p>
+  </header>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-  <div class="container">
-    <a class="navbar-brand" href="index.html">Aidan Feliciano</a>
-    <div class="collapse navbar-collapse">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Projects</a></li>
-        <li class="nav-item"><a class="nav-link active" href="about.html">About Me</a></li>
-        <li class="nav-item"><a class="nav-link" href="experience.html">Education and Work Experience</a></li>
-      </ul>
+  <nav>
+    <a href="index.html">Projects</a>
+    <a href="about.html" class="active">About Me</a>
+    <a href="experience.html">Education and Work Experience</a>
+  </nav>
+
+  <main>
+    <h2>About Me</h2>
+
+    <p>Hi, I'm Aidan — a data-driven professional who’s just as passionate about storytelling through analytics as I am about a good golf swing or hitting the slopes. When I’m not exploring datasets or building dashboards, you’ll probably find me training for my first marathon or following my favorite sports teams.</p>
+
+    <p>Some of my favorite teams include the <strong>UW Huskies</strong>, <strong>New York Yankees</strong>, and <strong>New York Knicks</strong>. Whether it's college football Saturdays, MLB playoffs, or watching the Knicks make a playoff push, I’m always keeping score.</p>
+
+    <h2>Hobbies Gallery</h2>
+    <div class="gallery">
+      <img src="golf.jpg" alt="Golfing">
+      <img src="skiing.jpg" alt="Skiing">
+      <img src="marathon.jpg" alt="Marathon training">
     </div>
-  </div>
-</nav>
+  </main>
 
-<!-- Main Content -->
-<div class="container">
-  <h1>About Me</h1>
-
-  <p class="lead text-center">
-    I’m a data-driven storyteller who loves mixing analytics with real-world insight. When I’m not working with Python or SQL,
-    you’ll probably find me golfing, skiing in the Cascades, or training for my first marathon.
-  </p>
-
-  <h2>Favorite Teams</h2>
-  <p class="text-center">
-    I’m a die-hard fan of the <strong>Washington Huskies</strong>, <strong>New York Yankees</strong>, and <strong>New York Knicks</strong> —
-    rooting for the underdog and reliving glory days.
-  </p>
-
-  <h2>Gallery</h2>
-  <div class="row gallery">
-    <div class="col-md-4"><img src="skiing.jpg" alt="Skiing in the mountains"></div>
-    <div class="col-md-4"><img src="golf.jpg" alt="Playing golf"></div>
-    <div class="col-md-4"><img src="marathon.jpg" alt="Marathon training"></div>
-  </div>
-</div>
-
-<!-- Footer -->
-<footer>
-  <a href="https://www.linkedin.com/in/aidan-feliciano" target="_blank">LinkedIn</a> |
-  aidan.e.feliciano@gmail.com | (203) 832-6555
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <footer class="site-footer">
+    <a href="https://www.linkedin.com/in/aidan-feliciano" target="_blank">LinkedIn</a> |
+    aidan.e.feliciano@gmail.com | (203) 832-6555
+  </footer>
 </body>
+
 </html>
