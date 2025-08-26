@@ -111,19 +111,29 @@
   </nav>
 
   <main>
-    <h2>Website Cookie Analysis</h2>
+    <h1>Website Cookie Analysis - December 2024</h1>
+    
+    <h2>Problem</h2>
+      <p>How can businesses utilize website cookie data to better understand, target, and extract revenue from their online customer base? This project aims to understand and analyze behavior patterns, revenue drivers, and predictors of customer transactions.</p>
 
-    <p>This project analyzes over 16,000 cookie-level web sessions for an online store. Each entry represents a user's interaction with the website, enabling analysis of behavior patterns, revenue drivers, and predictors of customer transactions.</p>
+    <h2>Dataset Overview </h2>
+    <p>
+      We used anonymized <strong>cookie-level</strong> web data from an online store. The data spans from 8/1/2010 to 1/31/2011. There are over 16,000 records, with each representing a "website session," 
+      where the online store tracks user activity on the website. To clarify, a <i>cookie</i> is a packet of data sent by a web server to a browser and then returned 
+      back by the browser each time the user subsequently accesses the same server. Cookies are used to identify users and track their activity. Below is the full data dictionary.
+    </p>
 
+    <p>INSERT DATA DICTIONARY</p>
+    
     <h2>Data Preparation & Cleaning</h2>
     <ul>
-      <li>Dropped columns with only 1s or 0s (e.g., goal completions, transaction rate).</li>
+      <li>Dropped columns where all values were either 1 or 0 (e.g., Nuber of Records, goalCompletionsAll).</li>
       <li>Removed ~200 rows with missing values.</li>
     </ul>
 
     <h2>Exploration & Segmentation</h2>
     <ul>
-      <li>Sessions spanned from August 2010 to January 2011.</li>
+      <li>There were 3,570 different cities representing 697 different regions</li>
       <li>Top cities included New York, Moscow, Kyiv, and London.</li>
       <li>Users were segmented by engagement level (based on time on site):
         <ul>
@@ -132,6 +142,8 @@
           <li>High: 87+ min</li>
         </ul>
       </li>
+      <p>We also found that the online store follows a seasonality that is expected in ecommerce, where we see higher webstore traffic, revenue, and time spent on site leading up the US holiday season (November and December), and then a sharp decrease after.</p>
+      <p>INSERT WEBSITE COOKIE SCREENSHOT</p>
     </ul>
 
     <h2>Search Engines & Revenue</h2>
