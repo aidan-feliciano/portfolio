@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Seattle Building Permits Analysis</title>
+  <title>Music and Mental Health Analysis</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -176,12 +176,15 @@
 
     <h2>Problem</h2>
     <p>
-      Can music listening habits predict or influence mental health outcomes? Our study explores how preferences around genre, frequency, and context relate to mental health conditions including anxiety, depression, insomnia, and OCD. We also evaluate whether music can be recommended as a potential support tool for mental well-being.
+      Can music listening habits predict or influence mental health outcomes? Our study explores how preferences around genre, frequency, and context relate to 
+      mental health conditions including anxiety, depression, insomnia, and OCD. We also evaluate whether music can be recommended as a potential support tool for mental well-being.
     </p>
 
     <h2>Dataset Overview</h2>
     <p>
-      We used the <strong>Music & Mental Health Survey</strong> from Kaggle, created by Catherine Rasgaitis at the University of Washington. The dataset covers a wide range of attributes: demographic information, music listening patterns, genre preferences, and self-reported mental health scores. Data was collected from 8/27/2022 to 11/9/2022.
+      Our data comes from the <a href="https://www.kaggle.com/datasets/catherinerasgaitis/mxmh-survey-results">Music & Mental Health Survey</a> dataset on Kaggle. 
+      The data was collected via a Google Form, and it includes wide range of attributes: demographic information, music listening patterns, genre preferences, 
+      and self-reported mental health scores. Data was collected from 8/27/2022 to 11/9/2022.
     </p>
 
     <h2>Goal / Key Questions</h2>
@@ -193,46 +196,120 @@
       <li>Can we recommend genres to support mental health improvement?</li>
     </ul>
 
-    <h2>Key Business Insights</h2>
+    <h2>Key Insights</h2>
 
-    <h3>Listening Habits by Age Group</h3>
-    <p>
-      We discovered that musical preferences vary significantly by age. Rock, Pop, and Metal were among the most frequently listened genres across age brackets, while genres like K-pop, Rap, and Lofi skewed heavily toward younger listeners. Classical music, Gospel, and Latin saw higher engagement among older respondents. While usage of platforms like Spotify dominated across all groups, we noticed that older adults reported fewer overall survey responses, which may limit the generalizability of conclusions for that group.
-    </p>
+      <h3>Listening Habits by Age Group</h3>
+        <p>
+          We discovered that musical preferences vary significantly by age. Rock, Pop, and Metal were among the most frequently listened genres across age brackets, 
+          while genres like K-pop, Rap, and Lofi skewed heavily toward younger listeners. Classical music, Gospel, and Latin saw higher engagement among older respondents. 
+          While usage of platforms like Spotify dominated across all groups, we noticed that older adults reported fewer overall survey responses, which may limit the 
+          generalizability of conclusions for that group.
+        </p>
+    
+        <img src="Music and Mental Health - Distributions.png" alt="Data distributions/segments">
+        <img src="Music and Mental Health - Preference by Age Group.png" alt="Music pfreferences by age group">
+    
+        <h3>Predicting Mental Health Conditions</h3>
+        <p>
+          We applied linear regression, random forest, and XGBoost to predict self-reported anxiety, depression, insomnia, and OCD scores. Across the board, models performed
+          poorly (R² values < 0.1), suggesting that music habits alone are not strong predictors of mental health scores. Even after introducing engineered features and 
+          classification frameworks (Low/Medium/High severity buckets), model accuracy remained around 50–55%. These results highlight that mental health outcomes are likely 
+          influenced by external and subjective factors not captured in the dataset.
+        </p>
+  
+      <h3>Does Music Impact Mental Health?</h3>
+        <p>
+          We shifted our focus to whether individuals felt that music improved, worsened, or had no effect on their mental health. Below is the distribution of Music Effects; we can see that the overwhelming majority
+          of survey responses claimed that muisc had a positive effect on mental health.
+        </p>
+    
+        <img src="Music and Mental Health - Mental Health Distributions.png" alt="Distribution of mental health effects">
+    
+        <p>
+          We created a Random Forest Classifier with class balancing with the following details:
+          <ul>
+            <li> Predictor Variables (X)</li>
+            <ul>
+              <li>Listening behavior</li>
+              <li>Musical background</li>
+              <li>Music preferences</li>
+            </ul>
+            <li>Hyperparameters</li>
+            <ul>
+              <li>n_estimators = 100</li>
+              <li>class_weight = "balanced"</li>
+            </ul>
+            <li>Target Variable (Y)</li>
+            <ul>
+              <li>Music effect on mental health:</li>
+              <ul>
+                <li>Worsens = -1</li>
+                <li>No effect = 0</li>
+                <li>Improves = 1</li>
+            </ul>
+          </ul>
+        </p>
+        
+        <p>
+          Using this model, we achieved an accuracy of <strong>77.03%</strong> and a weighted F1 score of 0.68, which don't look too bad on paper. However, when we look at the weighted ROC score, 
+          we see the big problem; this model barely predicted better than random guessing. 
+        </p>
+    
+        <img src="Music and Mental Health - ROC Curve.png" alt="ROC Curve">
+            
+        <p>
+          When we look at the classification report, we can understand why. 
+         </p>
+    
+        <img src="Music and Mental Health - Classification Report.png" alt="Classification report">
+            
+        <p>
+          The model was able to decently predict that music improved mental health scores because that class dominated the dataset (113 out of 148 test cases were Improves). That’s also the reason 
+          for the poor performance of the other classes; they were severely outweighed. However, we did learn some key insights, as when we did some feature importance analysis, we saw that BPM, 
+          Hours per day, and video game music frequency were the strongest predictors for mental health in this model. (WILL HAVE TO FIND THE FILE THAT HAS THIS IN COLAB) 
+        </p>
+        
+        
+      <h3>Genre Recommendations Using Clustering</h3>
+        <p>
+          To offer personalized genre recommendations for individuals who reported that music worsened or had no effect on their mental health, we used K-Means algorithm to cluster people into 
+          different groups and recommend the top three most-listened-to genres within each group. We also applied PCA (Principal Component Analysis) to reduce the nouse in our data. We found that
+          five components-Age, Foreign Languagues, While Working, Hours Per Day, and Composer-represent nearly <strong>80%</strong> of the data. Introducing PCA to our analysis increased the 
+          Silhouette Score from <strong>0.2</strong> to <strong>0.5</strong>. 
+        </p>
 
-    <h3>Predicting Mental Health Conditions</h3>
-    <p>
-      We applied linear regression, random forest, and XGBoost to predict self-reported anxiety, depression, insomnia, and OCD scores. Across the board, models performed poorly (R² values < 0.1), suggesting that music habits alone are not strong predictors of mental health scores. Even after introducing engineered features and classification frameworks (Low/Medium/High severity buckets), model accuracy remained around 50–55%. These results highlight that mental health outcomes are likely influenced by external and subjective factors not captured in the dataset.
-    </p>
+        <div class="row">
+          <div class="column">
+            <img src="Music and Mental Health - PCA Explained Variance.png" alt="PCA Explained Variance">
+          </div>
+          <div class="column">
+            <img src="Music and Mental Health - Silhouette Score Comparison.png" alt="Silhouette Score Comparison">
+          </div>
+        </div>
 
-    <h3>Does Music Impact Mental Health?</h3>
-    <p>
-      We shifted our focus to whether individuals felt that music improved, worsened, or had no effect on their mental health. Using a Random Forest Classifier with class balancing, we achieved an accuracy of <strong>77.03%</strong>, with key predictors including hours listened per day, background usage (e.g. while working), and genre choice. Notably, Lofi listeners reported the highest mental health scores—though this may reflect coping behavior rather than causation. Gospel and Latin music also appeared to correlate with better well-being.
-    </p>
-    <img src="music-mental-health-impact.png" alt="Marginal Transaction Rate vs. Users Targeted" width="600" />
+        <p>
+          We also created a graph to visualize the distribution of individuals. We can see several distinct groups. However, after running a K-Means clustering analysis, 
+          we decided to classify them into 39 groups, as this produced the highest silhouette score, indicating the best clustering performance
+        </p>
 
-    <h3>Genre Recommendations Using Clustering</h3>
-    <p>
-      To offer personalized genre recommendations for individuals who reported that music worsened or had no effect on their mental health, we used K-Means clustering with PCA for dimensionality reduction. The final model generated <strong>39 distinct listener groups</strong>, producing a silhouette score of 0.5—indicating solid cluster separation. For each group, we recommended three genres based on frequency and popularity within the segment. For instance, users who frequently listened to Video Game Music were recommended Jazz, Classical, and Rock as alternatives.
-    </p>
-    <img src="music-genre-clusters.png" alt="Genre Clustering Recommendations" width="600" />
-
-    <h2>Actions</h2>
-    <ul>
-      <li><strong>Data exploration:</strong> Explored relationships between music preferences and mental health conditions by age, genre, and listening frequency.</li>
-      <li><strong>Modeling:</strong> Deployed regression and classification models (Linear Regression, Random Forest, XGBoost) to assess predictive power and recommend actions.</li>
-      <li><strong>Clustering & Recommendation:</strong> Used K-Means and PCA to create actionable genre recommendations for personalized mental health support.</li>
-    </ul>
-
+        <div class="row">
+          <div class="column">
+            <img src="Music and Mental Health - Clusters PCA.png" alt="Results of PCA clustering">
+          </div>
+          <div class="column">
+            <img src="Music and Mental Health - Silhouette Score for Optimal K.png" alt="Silhouette Score for Optimal K">
+          </div>
+        </div>
+          
     <h2>Limitations & Recommendations</h2>
     <p>
-      The study faced several limitations: small sample size for older groups, highly subjective self-reporting, and lack of external behavioral indicators. Future work should include broader mental health metrics (e.g. stress levels, sleep quality), and explore synthetic data generation (e.g. SMOTE) to balance class representation.
+      The study faced several limitations: small sample size for older groups, highly subjective self-reporting, and lack of external behavioral indicators. 
+      Future work should include broader mental health metrics (e.g. stress levels, sleep quality), and explore synthetic data generation (e.g. SMOTE) to balance class representation.
     </p>
 
     <h2>Tools</h2>
     <ul>
       <li>Python (pandas, matplotlib, seaborn)</li>
-      <li>SQL for querying and cleanup</li>
     </ul>
 
     <div class="text-center">
