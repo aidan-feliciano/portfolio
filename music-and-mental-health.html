@@ -1,11 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Music & Mental Health Analysis</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Seattle Building Permits Analysis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f5f5f5;
+      color: #222;
+    }
+
+    header {
+      background-color: #2e3337;
+      padding: 2rem 1rem;
+      text-align: center;
+      color: white;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+
+    nav {
+      background-color: #1e1f21;
+      display: flex;
+      justify-content: center;
+      padding: 0.75rem;
+    }
+
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+      padding-bottom: 0.25rem;
+      border-bottom: 2px solid transparent;
+    }
+
+    nav a.active, nav a:hover {
+      color: #fff;
+      border-bottom: 2px solid #fff;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    main h1 {
+      font-size: 2.25rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p, ul {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      padding-left: 1.5rem; /* ADD this for bullet indentation */
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      margin: 1rem 0;
+      border-radius: 5px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      font-weight: 700;
+      border: 2px solid #00bfff;
+      background: none;
+      color: #00bfff;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      margin-top: 2rem;
+    }
+
+    .btn-primary:hover {
+      background: #00bfff;
+      color: white;
+    }
+
+    footer {
+      background-color: #2e3337;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.95rem;
+      margin-top: 3rem;
+    }
+
+    footer a {
+      color: white !important;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #cccccc;
+      text-decoration: underline;
+    }
+  
+    .date-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      font-style: italic;
+      color: #6c757d;
+    }
+    
+    .date-divider hr {
+      border-top: 1px solid #dee2e6;
+      margin: 0;
+      height: 1px;
+    }
+  
+
+  </style>
 </head>
+
+<body>
+  <header>
+    <h1>Aidan Feliciano</h1>
+    <p>Data-driven insights for real-world decisions</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Projects</a>
+    <a href="about.html">About Me</a>
+    <a href="experience.html">Education and Work Experience</a>
+  </nav>
+
+  
 <body>
   <main>
     <h1>Music & Mental Health Analysis</h1>
@@ -64,6 +228,22 @@
     <p>
       The study faced several limitations: small sample size for older groups, highly subjective self-reporting, and lack of external behavioral indicators. Future work should include broader mental health metrics (e.g. stress levels, sleep quality), and explore synthetic data generation (e.g. SMOTE) to balance class representation.
     </p>
+
+    <h2>Tools</h2>
+    <ul>
+      <li>Python (pandas, matplotlib, seaborn)</li>
+      <li>SQL for querying and cleanup</li>
+    </ul>
+
+    <div class="text-center">
+      <a href="index.html" class="btn-primary">← Back to Projects</a>
+    </div>
   </main>
+
+<footer>
+  <a href="https://www.linkedin.com/in/aidan-feliciano" target="_blank">LinkedIn</a> 
+  | aidan.e.feliciano@gmail.com | (203) 832-6555
+</footer>
+
 </body>
 </html>
