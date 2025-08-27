@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Music and Mental Health Analysis</title>
+  <title>Music and Mental Health Analysis - March 2025</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -191,7 +191,7 @@
     <p>Our analysis was guided by the following research questions:</p>
     <ul>
       <li>Do different age groups exhibit distinct listening behaviors?</li>
-      <li>Can we predict an individual’s mental health condition based on their music habits?</li>
+      <li>Can we predict an individual’s mental health condition (Anxiety, Depression, Insomnia, OCD) based on their music habits?</li>
       <li>Does music measurably improve or worsen mental health?</li>
       <li>Can we recommend genres to support mental health improvement?</li>
     </ul>
@@ -214,7 +214,7 @@
           We applied linear regression, random forest, and XGBoost to predict self-reported anxiety, depression, insomnia, and OCD scores. Across the board, models performed
           poorly (R² values < 0.1), suggesting that music habits alone are not strong predictors of mental health scores. Even after introducing engineered features and 
           classification frameworks (Low/Medium/High severity buckets), model accuracy remained around 50–55%. These results highlight that mental health outcomes are likely 
-          influenced by external and subjective factors not captured in the dataset.
+          influenced by external and subjective factors not captured in the dataset. The results of the different models we ran are available in the appendix. 
         </p>
   
       <h3>Does Music Impact Mental Health?</h3>
@@ -289,7 +289,7 @@
 
         <p>
           We also created a graph to visualize the distribution of individuals. We can see several distinct groups. However, after running a K-Means clustering analysis, 
-          we decided to classify them into 39 groups, as this produced the highest silhouette score, indicating the best clustering performance
+          we decided to classify them into 39 groups, as this produced the highest silhouette score, indicating the best clustering performance.
         </p>
 
         <div class="row">
@@ -300,7 +300,72 @@
             <img src="Music and Mental Health - Silhouette Score for Optimal K.png" alt="Silhouette Score for Optimal K">
           </div>
         </div>
-          
+
+        <p>
+          Below is a sample of what we would recommend to 5 different individuals based on our analysis
+        <p>
+
+          <table style="width:100%; border-collapse: collapse; text-align: center;">
+            <thead style="background-color: #4a148c; color: white;">
+              <tr>
+                <th>Name</th>
+                <th>Fav Genre</th>
+                <th>Music Effects</th>
+                <th>Very Frequently Listened</th>
+                <th>Recommended Genre 1</th>
+                <th>Recommended Genre 2</th>
+                <th>Recommended Genre 3</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Listener 1</strong></td>
+                <td>Rock</td>
+                <td>No effect</td>
+                <td>Metal, Pop, Rock</td>
+                <td>Pop</td>
+                <td>Classical</td>
+                <td>R&B</td>
+              </tr>
+              <tr>
+                <td><strong>Listener 2</strong></td>
+                <td>Video game music</td>
+                <td>Worsen</td>
+                <td>Classical, Video game music</td>
+                <td>Rock</td>
+                <td>Classical</td>
+                <td>Jazz</td>
+              </tr>
+              <tr>
+                <td><strong>Listener 3</strong></td>
+                <td>K pop</td>
+                <td>No effect</td>
+                <td>Folk, K pop</td>
+                <td>Rock</td>
+                <td>Pop</td>
+                <td>Classical</td>
+              </tr>
+              <tr>
+                <td><strong>Listener 4</strong></td>
+                <td>EDM</td>
+                <td>No effect</td>
+                <td>EDM</td>
+                <td>Rock</td>
+                <td>Pop</td>
+                <td>Video game music</td>
+              </tr>
+              <tr>
+                <td><strong>Listener 5</strong></td>
+                <td>EDM</td>
+                <td>No effect</td>
+                <td>EDM</td>
+                <td>Pop</td>
+                <td>Rock</td>
+                <td>Rap</td>
+              </tr>
+            </tbody>
+          </table>
+            
     <h2>Limitations & Recommendations</h2>
     <p>
       The study faced several limitations: small sample size for older groups, highly subjective self-reporting, and lack of external behavioral indicators. 
@@ -310,6 +375,14 @@
     <h2>Tools</h2>
     <ul>
       <li>Python (pandas, matplotlib, seaborn)</li>
+    </ul>
+
+    <h2>Appendix</h2>
+    <ul>
+      <li>Linear Models (R-squared):</li>
+      <li>Random Forest (R-squared):</li>
+      <li>Random Forest Classifier (Accuracy):</li>
+      <li>XGBoost (Accuracy):</li>
     </ul>
 
     <div class="text-center">
