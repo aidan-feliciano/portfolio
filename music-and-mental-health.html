@@ -152,7 +152,25 @@
       margin: 0;
       height: 1px;
     }
-  
+
+    .row {
+      display: flex;
+      justify-content: center;
+      gap: 1rem; /* spacing between the images */
+      flex-wrap: wrap; /* wraps on smaller screens */
+      margin: 2rem 0;
+    }
+
+    .column {
+      flex: 1;
+      max-width: 45%;
+    }
+    
+    .column img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
 
   </style>
 </head>
