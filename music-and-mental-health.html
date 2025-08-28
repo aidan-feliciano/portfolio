@@ -370,17 +370,23 @@
           for the poor performance of the other classes; they were severely outweighed. However, we did learn some key insights, as when we did some feature importance analysis, we saw that Age, BPM, 
           and Hours per day were the strongest predictors for mental health in this model. 
         </p>
-
-        <img src="Music and Mental Health - Feature Importance.png" alt="Feature importance" class="clickable-image>
         
-      <h3>Genre Recommendations Using Clustering</h3>
+        <div class="row">
+          <div class="column">
+            <img src="Music and Mental Health - Feature Importance.png" alt="Feature importance" class="popup-img">
+          </div>
+        </div>
+        
+        <br> 
+            
+        <h3>Genre Recommendations Using Clustering</h3>
         <p>
           To offer personalized genre recommendations for individuals who reported that music worsened or had no effect on their mental health, we used K-Means algorithm to cluster people into 
-          different groups and recommend the top three most-listened-to genres within each group. We also applied PCA (Principal Component Analysis) to reduce the nouse in our data. We found that
-          five components-Age, Foreign Languagues, While Working, Hours Per Day, and Composer-represent nearly <strong>80%</strong> of the data. Introducing PCA to our analysis increased the 
+          different groups and recommend the top three most-listened-to genres within each group. We also applied PCA (Principal Component Analysis) to reduce the noise in our data. We found that
+          five components—Age, Foreign Languages, While Working, Hours Per Day, and Composer—represent nearly <strong>80%</strong> of the data. Introducing PCA to our analysis increased the 
           Silhouette Score from <strong>0.2</strong> to <strong>0.5</strong>. 
         </p>
-
+        
         <div class="row">
           <div class="column">
             <img src="Music and Mental Health - PCA Explained Variance.png" alt="PCA Explained Variance" class="popup-img">
@@ -390,10 +396,11 @@
           </div>
         </div>
         
-        <p>
+        <br><p>
           We also created a graph to visualize the distribution of individuals. We can see several distinct groups. However, after running a K-Means clustering analysis, 
           we decided to classify them into 39 groups, as this produced the highest silhouette score, indicating the best clustering performance.
         </p>
+
         
         <div class="row">
           <div class="column">
