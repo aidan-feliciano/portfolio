@@ -499,35 +499,38 @@
   | aidan.e.feliciano@gmail.com | (203) 832-6555
 </footer>
 
-<!-- Modal structure -->
+
+<!-- Modal structure: -->
 <div id="imageModal" class="modal">
   <span class="close">&times;</span>
   <img class="modal-content" id="modalImg">
 </div>
 
-  
+<!-- Modal behavior JavaScript -->
 <script>
-  const modal = document.getElementById("imageModal");
-  const modalImg = document.getElementById("modalImage");
-  const images = document.querySelectorAll(".clickable-image");
-  const closeBtn = document.querySelector(".close");
+  document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImg");
+    const closeBtn = document.getElementsByClassName("close")[0];
 
-  images.forEach(img => {
-    img.addEventListener("click", function () {
-      modal.style.display = "block";
-      modalImg.src = this.src;
+    document.querySelectorAll('.popup-img').forEach(img => {
+      img.onclick = () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+        modalImg.alt = img.alt;
+      };
     });
-  });
 
-  closeBtn.onclick = function () {
-    modal.style.display = "none";
-  }
-
-  window.onclick = function(event) {
-    if (event.target === modal) {
+    closeBtn.onclick = () => {
       modal.style.display = "none";
-    }
-  }
+    };
+
+    window.onclick = (event) => {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+  });
 </script>
 
   
