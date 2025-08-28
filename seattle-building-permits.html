@@ -265,10 +265,16 @@
     <h1>Seattle Building Permits Analysis - July 2024</h1>
 
     <h2>Problem</h2>
-    <p>How is construction activity distributed across Seattle? We aimed to understand where building activity is concentrated, what types of projects are underway, and how they're being executed across the city by using permit data to uncover trends and draw actionable insights for real estate stakeholders and potential homebuyers.</p>
+      <p>How is construction activity distributed across Seattle? We aimed to understand where building activity is concentrated, 
+        what types of projects are underway, and how they're being executed across the city by using permit data to uncover trends 
+        and draw actionable insights for real estate stakeholders and potential homebuyers.
+      </p>
 
     <h2>Dataset Overview</h2>
-    <p>We used 2023 building permit data from the <a href="https://data.seattle.gov">City of Seattle Open Data Portal</a>. The dataset contains 5,596 records, each representing a unique building permit. There were 25 columns describing each permit, such as project cost, permit class, housing units, ZIP code, and more.</p>
+      <p>We used 2023 building permit data from the <a href="https://data.seattle.gov">City of Seattle Open Data Portal</a>. The dataset 
+        contains 5,596 records, each representing a unique building permit. There were 25 columns describing each permit, such as project 
+        cost, permit class, housing units, ZIP code, and more.
+      </p>
 
     <h2>Goal / Key Metrics</h2>
     <p>Our objective was to identify insights that could help real estate investors or homebuyers target neighborhoods to purchase or invest in. Key metrics included:</p>
@@ -285,7 +291,7 @@
     </ul>
 
     <img src="Seattle Building Permits - Data spillage.png" alt="Data Spillage" class="clickable-image large-image">
-    <img src="Seattle Building Permits - SQL code to fix data spillagepng.png" alt="SQL Code to Fix Spillage"> class="clickable-image large-image">
+    <img src="Seattle Building Permits - SQL code to fix data spillagepng.png" alt="SQL Code to Fix Spillage">
       
       <!-- Modal structure -->
       <div id="imageModal" class="modal">
@@ -306,14 +312,14 @@
     
 
     <img src="Seattle Building Permits - permits by zip code plot.png" alt="Permits by ZIP Code" class="clickable-image large-image">
-    <img src="Seattle Building Permits - high growth zip code visual.png" alt="Map of High-Growth ZIP Codes">
-      
-      <!-- Modal structure -->
+    
+    <!-- Modal structure -->
       <div id="imageModal" class="modal">
         <span class="close">&times;</span>
         <img class="modal-content" id="modalImage">
       </div>
-
+    
+    <img src="Seattle Building Permits - high growth zip code visual.png" alt="Map of High-Growth ZIP Codes">
     
     <h3>Permit approval times</h3>
     
@@ -322,31 +328,25 @@
       Below is the full distribution of permit approval times.
     </p>
     
-    <img src="Seattle Building Permits - days to approval distribution.png" alt="Approval Times Distribution" class="clickable-image large-image>
-
-    <!-- Modal structure -->
-      <div id="imageModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="modalImage">
-      </div>
+    <img src="Seattle Building Permits - days to approval distribution.png" alt="Approval Times Distribution">
 
     
     <h3>Most expensive ZIP codes</h3>
-    <p>
-      We found these ZIP codes and neighborhoods to have the highest average project cost:
-    </p>
-    <ul>
-      <li>98121: Belltown</li>
-      <li>98109: Queen Anne</li>
-      <li>98108: South Seattle, Beacon Hill</li>
-      <li>98101: Downtown Seattle</li>
-    </ul>
+      <p>
+        We found these ZIP codes and neighborhoods to have the highest average project cost:
+      </p>
+      <ul>
+        <li>98121: Belltown</li>
+        <li>98109: Queen Anne</li>
+        <li>98108: South Seattle, Beacon Hill</li>
+        <li>98101: Downtown Seattle</li>
+      </ul>
 
     <h2>Key Insights</h2>
-    <p>
-      Investors and buyers looking for areas of high development might consider ZIPs 98115, 98103, 98117, and 98118. Developers may use 
-      project cost data to allocate finances strategically. Those seeking quieter neighborhoods should target ZIPs with fewer permits.
-    </p>
+      <p>
+        Investors and buyers looking for areas of high development might consider ZIPs 98115, 98103, 98117, and 98118. Developers may use 
+        project cost data to allocate finances strategically. Those seeking quieter neighborhoods should target ZIPs with fewer permits.
+      </p>
 
     <h2>Next Steps</h2>
     <ul>
