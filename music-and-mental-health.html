@@ -308,15 +308,9 @@
     
       <img src="Music and Mental Health - Distributions.png" alt="Data distributions/segments" class="clickable-image large-image">
       <img src="Music and Mental Health - Preference by Age Group.png" alt="Music preferences by age group" class="clickable-image large-image">
-      
-      <!-- Modal structure -->
-      <div id="imageModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="modalImage">
-      </div>
-
     
-        <h3>Predicting Mental Health Conditions</h3>
+    
+      <h3>Predicting Mental Health Conditions</h3>
         <p>
           We applied linear regression, random forest, and XGBoost to predict self-reported anxiety, depression, insomnia, and OCD scores. Across the board, models performed
           poorly (R² values < 0.1), suggesting that music habits alone are not strong predictors of mental health scores. Even after introducing engineered features and 
@@ -330,15 +324,9 @@
           of survey responses claimed that music had a positive effect on mental health. TEST TEXT
         </p>
         
-        <img src="Music and Mental Health - Mental Health Distributions.png" alt="Distribution of mental health effects" class="clickable-img"/>
-        
-        <!-- Modal structure -->
-        <div id="imageModal" class="modal">
-          <span class="close">&times;</span>
-          <img class="modal-content" id="modalImage">
-        </div>
-    
-    
+        <img src="Music and Mental Health - Mental Health Distributions.png" alt="Distribution of mental health effects"/>
+            
+        <br>
         <p>
           We created a Random Forest Classifier with class balancing with the following details:
           <ul>
@@ -371,18 +359,19 @@
     
         <img src="Music and Mental Health - ROC Curve.png" alt="ROC Curve">
             
-        <p>
+        <br><p>
           When we look at the classification report, we can understand why. 
          </p>
     
         <img src="Music and Mental Health - Classification Report.png" alt="Classification report">
             
-        <p>
+        <br><p>
           The model was able to decently predict that music improved mental health scores because that class dominated the dataset (113 out of 148 test cases were Improves). That’s also the reason 
-          for the poor performance of the other classes; they were severely outweighed. However, we did learn some key insights, as when we did some feature importance analysis, we saw that BPM, 
-          Hours per day, and video game music frequency were the strongest predictors for mental health in this model. (WILL HAVE TO FIND THE FILE THAT HAS THIS IN COLAB) 
+          for the poor performance of the other classes; they were severely outweighed. However, we did learn some key insights, as when we did some feature importance analysis, we saw that Age, BPM, 
+          and Hours per day were the strongest predictors for mental health in this model. 
         </p>
-        
+
+        <img src="Music and Mental Health - Feature Importance.png" alt="Feature importance">
         
       <h3>Genre Recommendations Using Clustering</h3>
         <p>
@@ -394,26 +383,27 @@
 
         <div class="row">
           <div class="column">
-            <img src="Music and Mental Health - PCA Explained Variance.png" alt="PCA Explained Variance">
+            <img src="Music and Mental Health - PCA Explained Variance.png" alt="PCA Explained Variance" class="popup-img">
           </div>
           <div class="column">
-            <img src="Music and Mental Health - Silhouette Score Comparison.png" alt="Silhouette Score Comparison">
+            <img src="Music and Mental Health - Silhouette Score Comparison.png" alt="Silhouette Score Comparison" class="popup-img">
           </div>
         </div>
-
+        
         <p>
           We also created a graph to visualize the distribution of individuals. We can see several distinct groups. However, after running a K-Means clustering analysis, 
           we decided to classify them into 39 groups, as this produced the highest silhouette score, indicating the best clustering performance.
         </p>
-
+        
         <div class="row">
           <div class="column">
-            <img src="Music and Mental Health - Clusters PCA.png" alt="Results of PCA clustering">
+            <img src="Music and Mental Health - Clusters PCA.png" alt="Results of PCA clustering" class="popup-img">
           </div>
           <div class="column">
-            <img src="Music and Mental Health - Silhouette Score for Optimal K.png" alt="Silhouette Score for Optimal K">
+            <img src="Music and Mental Health - Silhouette Score for Optimal K.png" alt="Silhouette Score for Optimal K" class="popup-img">
           </div>
         </div>
+
 
         <p>
           Below is a sample of what we would recommend to 5 different individuals based on our analysis.
@@ -509,6 +499,13 @@
   | aidan.e.feliciano@gmail.com | (203) 832-6555
 </footer>
 
+<!-- Modal structure -->
+<div id="imageModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImg">
+</div>
+
+  
 <script>
   const modal = document.getElementById("imageModal");
   const modalImg = document.getElementById("modalImage");
