@@ -266,7 +266,7 @@
   
     table.custom-table thead {
       background-color: #2e3337;
-      color: #222; /* Matches page font color */
+      color: white;
     }
   
     table.custom-table th:nth-child(1),
@@ -406,16 +406,10 @@
           for the poor performance of the other classes; they were severely outweighed. However, we did learn some key insights, as when we did some feature importance analysis, we saw that Age, BPM, 
           and Hours per day were the strongest predictors for mental health in this model. 
         </p>
-        
-        <div class="row">
-          <div class="column">
-            <img src="Music and Mental Health - Feature Importance.png" alt="Feature importance" class="popup-img large-image">
-          </div>
-        </div>
-        
-        <br> 
-            
-        <h3>Genre Recommendations Using Clustering</h3>
+
+        <img src="Music and Mental Health - Feature Importance.png" alt="Feature importance" class="popup-img large-image">
+      
+      <h3>Genre Recommendations Using Clustering</h3>
         <p>
           To offer personalized genre recommendations for individuals who reported that music worsened or had no effect on their mental health, we used K-Means algorithm to cluster people into 
           different groups and recommend the top three most-listened-to genres within each group. We also applied PCA (Principal Component Analysis) to reduce the noise in our data. We found that
@@ -432,7 +426,7 @@
           </div>
         </div>
         
-        <br><p>
+        <p>
           We also created a graph to visualize the distribution of individuals. We can see several distinct groups. However, after running a K-Means clustering analysis, 
           we decided to classify them into 39 groups, as this produced the highest silhouette score, indicating the best clustering performance.
         </p>
