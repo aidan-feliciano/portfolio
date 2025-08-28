@@ -294,12 +294,12 @@
         <p>
           Musical preferences showed strong variation by age group. Rock, Pop, and Metal were the most frequently listened-to genres across nearly all age brackets, 
           as seen in the genre frequency chart. Meanwhile, genres like K-pop, Rap, and Lofi were especially popular among younger listeners (ages 10–29), as indicated in the age distribution within each genre.
-        </p><br><br>
+        </p><br>
 
         <p>
           Classical music, Gospel, and Latin showed higher engagement from older respondents, although overall survey responses were less common in these age brackets (notably ages 60+), 
           which may limit generalizability for these groups.
-        </p><br><br>
+        </p>
          
         <p>
           When it comes to streaming platforms, Spotify dominated across all respondents, but younger users were significantly more represented in the survey overall. 
@@ -327,10 +327,20 @@
       <h3>Does Music Impact Mental Health?</h3>
         <p>
           We shifted our focus to whether individuals felt that music improved, worsened, or had no effect on their mental health. Below is the distribution of Music Effects; we can see that the overwhelming majority
-          of survey responses claimed that muisc had a positive effect on mental health.
+          of survey responses claimed that music had a positive effect on mental health.
         </p>
+        
+        <img src="Music and Mental Health - Mental Health Distributions.png" 
+             alt="Distribution of mental health effects" 
+             class="clickable-img" 
+             onclick="openModal(this.src)" />
+        
+        <!-- Modal for full-size image -->
+        <div id="imgModal" class="modal" onclick="closeModal()">
+          <span class="close">&times;</span>
+          <img class="modal-content" id="modalImage">
+        </div>
     
-        <img src="Music and Mental Health - Mental Health Distributions.png" alt="Distribution of mental health effects">
     
         <p>
           We created a Random Forest Classifier with class balancing with the following details:
