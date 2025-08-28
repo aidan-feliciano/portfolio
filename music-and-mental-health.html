@@ -180,6 +180,27 @@
       margin: auto;
     }
 
+    .image-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+    
+    .image-grid img {
+      max-width: 48%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      transition: transform 0.2s ease;
+    }
+    
+    .image-grid img:hover {
+      transform: scale(1.02);
+    }
+
 
   </style>
 </head>
@@ -233,8 +254,15 @@
           generalizability of conclusions for that group.
         </p>
     
-        <img src="Music and Mental Health - Distributions.png" alt="Data distributions/segments">
-        <img src="Music and Mental Health - Preference by Age Group.png" alt="Music pfreferences by age group">
+        <div class="image-grid">
+          <a href="Music and Mental Health - Distributions.png" target="_blank">
+            <img src="Music and Mental Health - Distributions.png" alt="Data distributions/segments">
+          </a>
+          <a href="Music and Mental Health - Preference by Age Group.png" target="_blank">
+            <img src="Music and Mental Health - Preference by Age Group.png" alt="Music preferences by age group">
+          </a>
+        </div>
+
     
         <h3>Predicting Mental Health Conditions</h3>
         <p>
