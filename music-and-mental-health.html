@@ -250,7 +250,37 @@
       display: block;
       margin: 20px auto;
     }
-    
+
+    table.custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+  
+    table.custom-table th,
+    table.custom-table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+  
+    table.custom-table thead {
+      background-color: #f3e5f5; /* Light lavender background */
+      color: #4a148c; /* Matches page font color */
+    }
+  
+    table.custom-table th:nth-child(1),
+    table.custom-table td:nth-child(1) {
+      width: 120px; /* Widen Name column */
+    }
+  
+    table.custom-table tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+  
+    table.custom-table tbody tr:hover {
+      background-color: #f1f1f1;
+    }
 
   </style>
 </head>
@@ -379,7 +409,7 @@
         
         <div class="row">
           <div class="column">
-            <img src="Music and Mental Health - Feature Importance.png" alt="Feature importance" class="popup-img">
+            <img src="Music and Mental Health - Feature Importance.png" alt="Feature importance" class="popup-img large-image">
           </div>
         </div>
         
@@ -395,10 +425,10 @@
         
         <div class="row">
           <div class="column">
-            <img src="Music and Mental Health - PCA Explained Variance.png" alt="PCA Explained Variance" class="popup-img">
+            <img src="Music and Mental Health - PCA Explained Variance.png" alt="PCA Explained Variance" class="popup-img large image">
           </div>
           <div class="column">
-            <img src="Music and Mental Health - Silhouette Score Comparison.png" alt="Silhouette Score Comparison" class="popup-img">
+            <img src="Music and Mental Health - Silhouette Score Comparison.png" alt="Silhouette Score Comparison" class="popup-img large image">
           </div>
         </div>
         
@@ -410,7 +440,7 @@
         
         <div class="row">
           <div class="column">
-            <img src="Music and Mental Health - Clusters PCA.png" alt="Results of PCA clustering" class="popup-img">
+            <img src="Music and Mental Health - Clusters PCA.png" alt="Results of PCA clustering" class="popup-img large image">
           </div>
           <div class="column">
             <img src="Music and Mental Health - Silhouette Score for Optimal K.png" alt="Silhouette Score for Optimal K" class="popup-img large-image">
@@ -422,8 +452,8 @@
           Below is a sample of what we would recommend to 5 different individuals based on our analysis.
         <p>
 
-          <table style="width:100%; border-collapse: collapse; text-align: center;">
-            <thead style="background-color: #4a148c; color: white;">
+          <table class="custom-table">
+            <thead>
               <tr>
                 <th>Name</th>
                 <th>Fav Genre</th>
