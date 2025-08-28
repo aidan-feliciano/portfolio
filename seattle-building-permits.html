@@ -244,7 +244,14 @@
       cursor: pointer;
     }
 
+    .large-image {
+      width: 80%;
+      max-width: 800px;
+      display: block;
+      margin: 20px auto;
+    }
 
+    
   </style>
 </head>
 
@@ -290,7 +297,7 @@
       <li><strong>Exploratory data analysis:</strong> Visualizing permits by class and ZIP code, plotting distributions for approval times and permit costs.</li>
     </ul>
 
-    <img src="Seattle Building Permits - Data spillage.png" alt="Data Spillage" class="clickable-image large-image">
+    <img src="Seattle Building Permits - Data spillage.png" alt="Data Spillage" class="popup-img large-image">
     <img src="Seattle Building Permits - SQL code to fix data spillagepng.png" alt="SQL Code to Fix Spillage">
       
 
@@ -307,7 +314,7 @@
     </ul>
     
 
-    <img src="Seattle Building Permits - permits by zip code plot.png" alt="Permits by ZIP Code" class="clickable-image large-image">
+    <img src="Seattle Building Permits - permits by zip code plot.png" alt="Permits by ZIP Code" class="popup-img large-image">
     
 
     
@@ -370,29 +377,31 @@
   <img class="modal-content" id="modalImg">
 </div>
 
-  
+<!-- Modal behavior JavaScript -->
 <script>
-  const modal = document.getElementById("imageModal");
-  const modalImg = document.getElementById("modalImage");
-  const images = document.querySelectorAll(".clickable-image");
-  const closeBtn = document.querySelector(".close");
+  document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImg");
+    const closeBtn = document.getElementsByClassName("close")[0];
 
-  images.forEach(img => {
-    img.addEventListener("click", function () {
-      modal.style.display = "block";
-      modalImg.src = this.src;
+    document.querySelectorAll('.popup-img').forEach(img => {
+      img.onclick = () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+        modalImg.alt = img.alt;
+      };
     });
-  });
 
-  closeBtn.onclick = function () {
-    modal.style.display = "none";
-  }
-
-  window.onclick = function(event) {
-    if (event.target === modal) {
+    closeBtn.onclick = () => {
       modal.style.display = "none";
-    }
-  }
+    };
+
+    window.onclick = (event) => {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+  });
 </script>
   
 
