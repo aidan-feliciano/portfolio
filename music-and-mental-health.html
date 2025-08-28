@@ -201,6 +201,50 @@
       transform: scale(1.02);
     }
 
+    .large-image {
+      width: 80%;
+      max-width: 800px;
+      display: block;
+      margin: 20px auto;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    
+    /* Modal container */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+    }
+    
+    /* Modal content (the image) */
+    .modal-content {
+      display: block;
+      margin: auto;
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+    }
+    
+    /* Close button */
+    .close {
+      position: absolute;
+      top: 40px;
+      right: 60px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    
 
   </style>
 </head>
@@ -254,14 +298,14 @@
           generalizability of conclusions for that group.
         </p>
     
-        <div class="image-grid">
-          <a href="Music and Mental Health - Distributions.png" target="_blank">
-            <img src="Music and Mental Health - Distributions.png" alt="Data distributions/segments">
-          </a>
-          <a href="Music and Mental Health - Preference by Age Group.png" target="_blank">
-            <img src="Music and Mental Health - Preference by Age Group.png" alt="Music preferences by age group">
-          </a>
-        </div>
+      <img src="Music and Mental Health - Distributions.png" alt="Data distributions/segments" class="clickable-image large-image">
+      <img src="Music and Mental Health - Preference by Age Group.png" alt="Music preferences by age group" class="clickable-image large-image">
+      
+      <!-- Modal structure -->
+      <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+      </div>
 
     
         <h3>Predicting Mental Health Conditions</h3>
@@ -450,5 +494,30 @@
   | aidan.e.feliciano@gmail.com | (203) 832-6555
 </footer>
 
+<script>
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+  const images = document.querySelectorAll(".clickable-image");
+  const closeBtn = document.querySelector(".close");
+
+  images.forEach(img => {
+    img.addEventListener("click", function () {
+      modal.style.display = "block";
+      modalImg.src = this.src;
+    });
+  });
+
+  closeBtn.onclick = function () {
+    modal.style.display = "none";
+  }
+
+  window.onclick = function(event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+
+  
 </body>
 </html>
