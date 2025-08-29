@@ -152,7 +152,136 @@
       margin: 0;
       height: 1px;
     }
+
+    .row {
+      display: flex;
+      justify-content: center;
+      gap: 1rem; /* spacing between the images */
+      flex-wrap: wrap; /* wraps on smaller screens */
+      margin: 2rem 0;
+    }
+
+    .column {
+      flex: 1;
+      max-width: 45%;
+    }
+    
+    .column img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      max-width: 600px; /* or whatever width suits your layout */
+      display: block;
+      margin: auto;
+    }
+
+    .image-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+    
+    .image-grid img {
+      max-width: 48%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      transition: transform 0.2s ease;
+    }
+    
+    .image-grid img:hover {
+      transform: scale(1.02);
+    }
+
+    .large-image {
+      width: 80%;
+      max-width: 800px;
+      display: block;
+      margin: 20px auto;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    
+    /* Modal container */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+    }
+    
+    /* Modal content (the image) */
+    .modal-content {
+      display: block;
+      margin: auto;
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+    }
+    
+    /* Close button */
+    .close {
+      position: absolute;
+      top: 40px;
+      right: 60px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .large-image {
+      width: 80%;
+      max-width: 800px;
+      display: block;
+      margin: 20px auto;
+    }
+
+    table.custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+    }
   
+    table.custom-table th,
+    table.custom-table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+  
+    table.custom-table thead {
+      background-color: #2e3337;
+      color: white;
+    }
+  
+    table.custom-table th:nth-child(1),
+    table.custom-table td:nth-child(1) {
+      width: 120px; /* Widen Name column */
+    }
+  
+    table.custom-table tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+  
+    table.custom-table tbody tr:hover {
+      background-color: #f1f1f1;
+    }
+    
   </style>
 </head>
 
@@ -187,7 +316,7 @@
     The data includes variables such as bounces, time on site, number of visits, revenue, and traffic source.
   </p>
 
-  <img src="Website Cookie Analysis - Data dictionary.png" alt="Data Dictionary">
+  <img src="Website Cookie Analysis - Data dictionary.png" alt="Data Dictionary" class="popup-img large-image">
 
   <h2 style="text-align: left;">Data Preparation & Cleaning</h2>
   <ul>
@@ -207,14 +336,14 @@
     Interestingly, referral sources were consistently the lowest driver of revenue across all segments:
   </p>
 
-  <img src="Website Cookie Analysis - Medium segmentation.png" alt="Segmentation by medium">
+  <img src="Website Cookie Analysis - Medium segmentation.png" alt="Segmentation by medium" class="popup-img large-image">
     
   <p>
     We also observed seasonal patterns typical of ecommerce behavior, which is characterized by spikes in site visits, revenue, and session time leading up 
     to the holiday season (November–December), followed by a sharp drop in January, as we can see below:
   </p>
     
-  <img src="Website Cookie Analysis - Website Cookie Seasonality.png" alt="Seasonality of website traffic">
+  <img src="Website Cookie Analysis - Website Cookie Seasonality.png" alt="Seasonality of website traffic" class="popup-img large-image">
 
   <h2 style="text-align: left;">Search Engines & Revenue</h2>
   <p>
@@ -267,5 +396,39 @@
     <a href="https://www.linkedin.com/in/aidan-feliciano" target="_blank">LinkedIn</a> |
     aidan.e.feliciano@gmail.com | (203) 832-6555
   </footer>
+
+<!-- Modal structure: -->
+<div id="imageModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImg">
+</div>
+
+<!-- Modal behavior JavaScript -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImg");
+    const closeBtn = document.getElementsByClassName("close")[0];
+
+    document.querySelectorAll('.popup-img').forEach(img => {
+      img.onclick = () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+        modalImg.alt = img.alt;
+      };
+    });
+
+    closeBtn.onclick = () => {
+      modal.style.display = "none";
+    };
+
+    window.onclick = (event) => {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+  });
+</script>
+  
 </body>
 </html>
