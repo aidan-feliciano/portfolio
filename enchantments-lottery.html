@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Seattle Building Permits Analysis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f5f5f5;
+      color: #222;
+    }
+
+    header {
+      background-color: #2e3337;
+      padding: 2rem 1rem;
+      text-align: center;
+      color: white;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+
+    nav {
+      background-color: #1e1f21;
+      display: flex;
+      justify-content: center;
+      padding: 0.75rem;
+    }
+
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+      padding-bottom: 0.25rem;
+      border-bottom: 2px solid transparent;
+    }
+
+    nav a.active, nav a:hover {
+      color: #fff;
+      border-bottom: 2px solid #fff;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    main h1 {
+      font-size: 2.25rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p, ul {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      padding-left: 1.5rem; /* ADD this for bullet indentation */
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      margin: 1rem 0;
+      border-radius: 5px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      font-weight: 700;
+      border: 2px solid #00bfff;
+      background: none;
+      color: #00bfff;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      margin-top: 2rem;
+    }
+
+    .btn-primary:hover {
+      background: #00bfff;
+      color: white;
+    }
+
+    footer {
+      background-color: #2e3337;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.95rem;
+      margin-top: 3rem;
+    }
+
+    footer a {
+      color: white !important;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #cccccc;
+      text-decoration: underline;
+    }
+  
+    .date-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      font-style: italic;
+      color: #6c757d;
+    }
+    
+    .date-divider hr {
+      border-top: 1px solid #dee2e6;
+      margin: 0;
+      height: 1px;
+    }
+
+    .row {
+      display: flex;
+      justify-content: center;
+      gap: 1rem; /* spacing between the images */
+      flex-wrap: wrap; /* wraps on smaller screens */
+      margin: 2rem 0;
+    }
+
+    .column {
+      flex: 1;
+      max-width: 45%;
+    }
+    
+    .column img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      max-width: 600px; /* or whatever width suits your layout */
+      display: block;
+      margin: auto;
+    }
+
+    .image-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+    
+    .image-grid img {
+      max-width: 48%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      transition: transform 0.2s ease;
+    }
+    
+    .image-grid img:hover {
+      transform: scale(1.02);
+    }
+
+    .large-image {
+      width: 80%;
+      max-width: 800px;
+      display: block;
+      margin: 20px auto;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    
+    /* Modal container */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+    }
+    
+    /* Modal content (the image) */
+    .modal-content {
+      display: block;
+      margin: auto;
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+    }
+    
+    /* Close button */
+    .close {
+      position: absolute;
+      top: 40px;
+      right: 60px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .large-image {
+      width: 80%;
+      max-width: 800px;
+      display: block;
+      margin: 20px auto;
+    }
+
+    
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Aidan Feliciano</h1>
+    <p>Data-driven insights for real-world decisions</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Projects</a>
+    <a href="about.html">About Me</a>
+    <a href="experience.html">Education and Work Experience</a>
+  </nav>
+
+  <main>
+
+    <div style="margin: 40px 0;">
+      <h2>Northwest Treks Permit Strategy</h2>
+      <p>
+        Our team at Northwest Treks wanted to secure a 4-day backpacking permit for the Enchantments in 2025. We analyzed 2024 lottery statistics and historical weather data to identify the best entry date, group size, and zone preferences for maximizing application success.
+      </p>
+    
+      <div class="project-section">
+        <h2>Northwest Treks Permit Strategy</h2>
+        <p>
+          Northwest Treks aims to secure a 4-day backpacking permit into the Enchantments in 2025 to film a promotional video. We analyzed 2024 lottery statistics and historical weather to identify the best entry dates, zones, and group sizes to maximize success while ensuring good weather conditions.
+        </p>
+      
+        <div class='tableauPlaceholder' id='viz1757010973109' style='width: 100%; position: relative; margin: 2rem 0;'>
+          <noscript>
+            <a href='#'>
+              <img alt='The Enchantments Lottery' src='https://public.tableau.com/static/images/Ta/TableauProject_17570091761010/TheEnchantmentsLottery/1_rss.png' style='border: none' />
+            </a>
+          </noscript>
+          <object class='tableauViz' style='display:none;'>
+            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+            <param name='embed_code_version' value='3' />
+            <param name='site_root' value='' />
+            <param name='name' value='TableauProject_17570091761010/TheEnchantmentsLottery' />
+            <param name='tabs' value='no' />
+            <param name='toolbar' value='yes' />
+            <param name='static_image' value='https://public.tableau.com/static/images/Ta/TableauProject_17570091761010/TheEnchantmentsLottery/1.png' />
+            <param name='animate_transition' value='yes' />
+            <param name='display_static_image' value='yes' />
+            <param name='display_spinner' value='yes' />
+            <param name='display_overlay' value='yes' />
+            <param name='display_count' value='yes' />
+            <param name='language' value='en-US' />
+            <param name='filter' value='publish=yes' />
+          </object>
+        </div>
+      
+        <script type='text/javascript'>
+          var divElement = document.getElementById('viz1757010973109');
+          var vizElement = divElement.getElementsByTagName('object')[0];
+          vizElement.style.width = '100%';
+          vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+          var scriptElement = document.createElement('script');
+          scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+          vizElement.parentNode.insertBefore(scriptElement, vizElement);
+        </script>
+      
+        <p>
+          This dashboard answers the following:
+          <ul>
+            <li><strong>What are the chances of winning a permit based on 2024 data?</strong></li>
+            <li><strong>What selections (dates, zones, group sizes) increase their chances?</strong></li>
+            <li><strong>What date gives the best weather + lottery success for Core Zone access?</strong></li>
+          </ul>
+        </p>
+      </div>
+
+
+
+     <div class="text-center">
+      <a href="index.html" class="btn-primary">← Back to Projects</a>
+    </div>
+  </main>
+
+<footer>
+  <a href="https://www.linkedin.com/in/aidan-feliciano" target="_blank">LinkedIn</a> 
+  | aidan.e.feliciano@gmail.com | (203) 832-6555
+</footer>
+
+  
+<!-- Modal structure: -->
+<div id="imageModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImg">
+</div>
+
+<!-- Modal behavior JavaScript -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImg");
+    const closeBtn = document.getElementsByClassName("close")[0];
+
+    document.querySelectorAll('.popup-img').forEach(img => {
+      img.onclick = () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+        modalImg.alt = img.alt;
+      };
+    });
+
+    closeBtn.onclick = () => {
+      modal.style.display = "none";
+    };
+
+    window.onclick = (event) => {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+  });
+</script>
+  
+
+</body>
+</html>
