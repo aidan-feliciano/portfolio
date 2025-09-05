@@ -251,6 +251,37 @@
       margin: 20px auto;
     }
 
+    table.custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+    }
+  
+    table.custom-table th,
+    table.custom-table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+  
+    table.custom-table thead {
+      background-color: #2e3337;
+      color: white;
+    }
+  
+    table.custom-table th:nth-child(1),
+    table.custom-table td:nth-child(1) {
+      width: 120px; /* Widen Name column */
+    }
+  
+    table.custom-table tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+  
+    table.custom-table tbody tr:hover {
+      background-color: #f1f1f1;
+    }
+
     
   </style>
 </head>
@@ -296,18 +327,18 @@
         There were two sets of data used in this project: the 2024 Enchantment lottery statistics, and the historical weather data for the area. Each observation in the lottery statistics represents an application (like the example above), 
         and it is structured as follows:
           <ul>
-            <li>Lottery Year: the year in which the application was submitted (2024 for all of our data)</li>
-            <li>LotteryID: the ID associated with the application</li>
-            <li>Choice ID: the ID associated with each entry for the application (there will be 3 per 1 LotteryID)</li>
-            <li>Choice Number: the order ranking of each entry in the application (1, 2, and 3 per application)</li>
-            <li>Preferred Entry Date: the preferred entry date specified for each application entry</li>
-            <li>Preferred Zone: the preferred zone specified for each application entry</li>
-            <li>Maximum Requested Group Size: the requested group each application entry</li>
-            <li>Choice Awarded?: whether or not the <i>individual</i> entry of the applicaiton was awarded</li>
-            <li>Application Result: whether or not <i>any one</i> of the three entries in the application</i></li>
+            <li><strong>Lottery Year</strong>: the year in which the application was submitted (2024 for all of our data)</li>
+            <li><strong>LotteryID</strong>: the ID associated with the application</li>
+            <li><strong>Choice ID</strong>: the ID associated with each entry for the application (there will be 3 per 1 LotteryID)</li>
+            <li><strong>Choice Number</strong>: the order ranking of each entry in the application (1, 2, and 3 per application)</li>
+            <li><strong>Preferred Entry Date</strong>: the preferred entry date specified for each application entry</li>
+            <li><strong>Preferred Zone</strong>: the preferred zone specified for each application entry</li>
+            <li><strong>Maximum Requested Group Size</strong>: the requested group each application entry</li>
+            <li><strong>Choice Awarded?</strong>: whether or not the <i>individual</i> entry of the applicaiton was awarded</li>
+            <li><strong>Application Result</strong>: whether or not <i>any one</i> of the three entries in the application</i></li>
           </ul>
         
-        So, for the same example above, the data would look like this:
+        So, for the same example above, the data would look like this: <br>
           <table class="custom-table">
             <thead>
               <tr>
@@ -359,38 +390,73 @@
             </tbody>
           </table>
 
+        <br>
         In this example, the first application entry was awarded, which makes the overal application successful. So, even though the second and third entries were not awarded, they are still part of a successful application.
       </p>
 
-  
-
       <h2>Analysis</h2>
-        <p>
-          To analyze our odds, we created a used Tableau to calculate some basic lottery statistics, what the odds are for different zones/group sizes, how to truly maximize our chances,
-          and a final application recommendation. 
-        </p>
 
-      <section id="story-1" class="tableau-story">
-        <h3>Where Are the Enchantments?</h3>
-        <p>
-          This interactive map zooms in on the Alpine Lakes Wilderness and highlights the 5 permit zones within the Enchantments area: Colchuck, Core, Eightmile/Caroline, Snow, and Stuart. 
-          These zones represent the 1st, 2nd, and 3rd preferences that you can specify on your application.
-        </p>
+        <section id="story-1" class="tableau-story">
+          <h3>Where Are the Enchantments?</h3>
+          <p>
+            This interactive map zooms in on the Alpine Lakes Wilderness and highlights the 5 permit zones within the Enchantments area: Colchuck, Core, Eightmile/Caroline, Snow, and Stuart. 
+            These zones represent the 1st, 2nd, and 3rd preferences that you can specify on your application.
+          </p>
+        
+          <div class='tableauPlaceholder' id='viz1757106679880' style='position: relative'>
+            <noscript>
+              <a href='#'>
+                <img alt='Where are the enchantments?' src='https://public.tableau.com/static/images/Re/Recommendation_17571010462730/Wherearetheenchantments/1_rss.png' style='border: none' />
+              </a>
+            </noscript>
+            <object class='tableauViz' style='display:none;'>
+              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+              <param name='embed_code_version' value='3' />
+              <param name='site_root' value='' />
+              <param name='name' value='Recommendation_17571010462730&#47;Wherearetheenchantments' />
+              <param name='tabs' value='no' />
+              <param name='toolbar' value='yes' />
+              <param name='static_image' value='https://public.tableau.com/static/images/Re/Recommendation_17571010462730/Wherearetheenchantments/1.png' />
+              <param name='animate_transition' value='yes' />
+              <param name='display_static_image' value='yes' />
+              <param name='display_spinner' value='yes' />
+              <param name='display_overlay' value='yes' />
+              <param name='display_count' value='yes' />
+              <param name='language' value='en-US' />
+              <param name='filter' value='publish=yes' />
+            </object>
+          </div>
+        
+          <script type='text/javascript'>
+            var divElement = document.getElementById('viz1757106679880');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            vizElement.style.width = '100%';
+            vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+          </script>
+        </section>
+  
+  
+      <section id="story-2" class="tableau-story">
+        <h3>What are the Overall Odds of Winning?</h3>
+          <p>
+            This dashboard highlights the raw probailities of having a specific application entry and overall application approved. It also helps us understand the odds of success 
+            over the time range that the Enchantments are open (5/15 to 10/31). 
+          </p>
       
-        <div class='tableauPlaceholder' id='viz1757101785376' style='position: relative'>
+        <div class='tableauPlaceholder' id='viz1757102363641' style='position: relative'>
           <noscript>
             <a href='#'>
-              <img alt='Where are the enchantments? ' src='https://public.tableau.com/static/images/Wh/Wherearetheenchantments/Wherearetheenchantments/1_rss.png' style='border: none' />
+              <img alt='How likely are we to win?' src='https://public.tableau.com/static/images/Ho/Howlikelyarewetowin/Howlikelyarewetowin/1_rss.png' style='border: none' />
             </a>
           </noscript>
           <object class='tableauViz' style='display:none;'>
             <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
             <param name='embed_code_version' value='3' />
             <param name='site_root' value='' />
-            <param name='name' value='Wherearetheenchantments&#47;Wherearetheenchantments' />
+            <param name='name' value='Howlikelyarewetowin&#47;Howlikelyarewetowin' />
             <param name='tabs' value='no' />
             <param name='toolbar' value='yes' />
-            <param name='static_image' value='https://public.tableau.com/static/images/Wh/Wherearetheenchantments/Wherearetheenchantments/1.png' />
+            <param name='static_image' value='https://public.tableau.com/static/images/Ho/Howlikelyarewetowin/Howlikelyarewetowin/1.png' />
             <param name='animate_transition' value='yes' />
             <param name='display_static_image' value='yes' />
             <param name='display_spinner' value='yes' />
@@ -401,78 +467,182 @@
         </div>
       
         <script type='text/javascript'>
-          var divElement = document.getElementById('viz1757101785376');
+          var divElement = document.getElementById('viz1757102363641');
           var vizElement = divElement.getElementsByTagName('object')[0];
-          vizElement.style.width = '100%';
+          vizElement.style.width='100%';
           vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-          var scriptElement = document.createElement('script');
-          scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-          vizElement.parentNode.insertBefore(scriptElement, vizElement);
         </script>
+        
+        <br>
+        <p>
+          We can see from our dashboard that the <strong>success rate</strong> for winning the lottery is <strong>6.44%</strong>, while the <strong>award rate</strong> is <strong>2.16%</strong>. The success rate represents the rate of applications that 
+          were successful in grating access to <i>one</i> of the entries in the application. The award rate represents the probability of success for an <i>individual entry</i> in an application.  
+        </p>
+      </section>
+
+      <section id="story-3" class="tableau-story">
+        <h3>Exploring Odds Over Time</h3>
+          
+        <p>
+          Here we can begin to understand where we can set ourselves up with better odds of success. We can see that entries with preferred entry dates in October have the highest success at <strong>11.28%</strong>, while August provides the lowest.  
+        </p>
+
+        <div class='tableauPlaceholder' id='viz1757108450011' style='position: relative'>
+            <noscript>
+              <a href='#'>
+                <img alt='What Can We do differently - time' 
+                     src='https://public.tableau.com/static/images/Wh/Whatcanwedodifferently-time/WhatCanWedodifferently-time/1_rss.png' 
+                     style='border: none' />
+              </a>
+            </noscript>
+            <object class='tableauViz' style='display:none;'>
+              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+              <param name='embed_code_version' value='3' />
+              <param name='site_root' value='' />
+              <param name='name' value='Whatcanwedodifferently-time&#47;WhatCanWedodifferently-time' />
+              <param name='tabs' value='no' />
+              <param name='toolbar' value='yes' />
+              <param name='static_image' value='https://public.tableau.com/static/images/Wh/Whatcanwedodifferently-time/WhatCanWedodifferently-time/1.png' />
+              <param name='animate_transition' value='yes' />
+              <param name='display_static_image' value='yes' />
+              <param name='display_spinner' value='yes' />
+              <param name='display_overlay' value='yes' />
+              <param name='display_count' value='yes' />
+              <param name='language' value='en-US' />
+            </object>
+          </div>
+        
+          <script type='text/javascript'>
+            var divElement = document.getElementById('viz1757108450011');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            vizElement.style.width = '100%';
+            vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+          </script>
+          
+        <p>
+          We also learn that entry dates on Sunday are most likely to be approved, with a <strong>3.5%</strong> award rate. We want to avoid applying for Fridays though, as we have the lowest chance of success on those days.   
+        </p>
+        
       </section>
 
 
-    <section id="story-2" class="tableau-story">
-      <h3>What are the odds of winning?</h3>
+      <section id="story-4" class="tableau-story">
+        <h3>What Group Sizes Work Best?</h3>
+      
+        <p>
+          We can see a clear pattern: smaller group sizes have a higher chance of success. Solo applicants have the best odds at <strong>14.04%</strong>, and success rate drops quickly after that. However, we also see that 
+          there isn't much of a change in the success rate as group size increases after 1.
+        </p>
+      
+        <div class='tableauPlaceholder' id='viz1757109177822' style='position: relative'>
+          <noscript>
+            <a href='#'>
+              <img alt='What Can We do differently - group sizes' 
+                   src='https://public.tableau.com/static/images/Wh/Whatcanwedodifferently-groupsize/WhatCanWedodifferently-groupsizes/1_rss.png' 
+                   style='border: none' />
+            </a>
+          </noscript>
+          <object class='tableauViz' style='display:none;'>
+            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+            <param name='embed_code_version' value='3' />
+            <param name='site_root' value='' />
+            <param name='name' value='Whatcanwedodifferently-groupsize&#47;WhatCanWedodifferently-groupsizes' />
+            <param name='tabs' value='no' />
+            <param name='toolbar' value='yes' />
+            <param name='static_image' value='https://public.tableau.com/static/images/Wh/Whatcanwedodifferently-groupsize/WhatCanWedodifferently-groupsizes/1.png' />
+            <param name='animate_transition' value='yes' />
+            <param name='display_static_image' value='yes' />
+            <param name='display_spinner' value='yes' />
+            <param name='display_overlay' value='yes' />
+            <param name='display_count' value='yes' />
+            <param name='language' value='en-US' />
+            <param name='filter' value='publish=yes' />
+          </object>
+        </div>
+      
+        <script type='text/javascript'>
+          var divElement = document.getElementById('viz1757109177822');
+          var vizElement = divElement.getElementsByTagName('object')[0];
+          vizElement.style.width = '100%';
+          vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+        </script>
+      
+        <p>
+          The success rate by zone remains fairly consistent across group sizes, but solo applicants see the most balanced outcomes across all zones. If flexibility allows, applying alone may significantly improve your odds.
+        </p>
+      </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      <section id="story-5" class="tableau-story">
+        <h3>Odds by Zone and Group Size</h3>
+
+        <p>
+          This dashboard helps us understand the individual success and award rates for different zones and group sizes. Use the "Success Rate by Group Size" chart to explore how different combinations of group sizes and zones can affect
+          the success/award rates for applications/entries. 
+        </p>
+        
+        <div class='tableauPlaceholder' id='viz1757106852124' style='position: relative'>
+          <noscript>
+            <a href='#'>
+              <img alt='Different Options' src='https://public.tableau.com/static/images/Di/DifferentOptions/DifferentOptions/1_rss.png' style='border: none' />
+            </a>
+          </noscript>
+          <object class='tableauViz' style='display:none;'>
+            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+            <param name='embed_code_version' value='3' />
+            <param name='site_root' value='' />
+            <param name='name' value='DifferentOptions&#47;DifferentOptions' />
+            <param name='tabs' value='no' />
+            <param name='toolbar' value='yes' />
+            <param name='static_image' value='https://public.tableau.com/static/images/Di/DifferentOptions/DifferentOptions/1.png' />
+            <param name='animate_transition' value='yes' />
+            <param name='display_static_image' value='yes' />
+            <param name='display_spinner' value='yes' />
+            <param name='display_overlay' value='yes' />
+            <param name='display_count' value='yes' />
+            <param name='language' value='en-US' />
+            <param name='filter' value='publish=yes' />
+          </object>
+        </div>
+      
+        <script type='text/javascript'>
+          var divElement = document.getElementById('viz1757106852124');
+          var vizElement = divElement.getElementsByTagName('object')[0];
+          vizElement.style.width = '100%';
+          vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+        </script>
+      </section>
+
+      <br>
+        <p>
+          We find here that your odds of success are way higher if you apply for a group size of one. If you want to go with a larger group, your best odds are applying to the Eightmile/Caroline and Stuart zones.  the  see from our dashboard that the <strong>success rate</strong> for winning the lottery is <strong>6.44%</strong>, while the <strong>award rate</strong> is <strong>2.16%</strong>. The success rate represents the rate of applications that 
+          were successful in grating access to <i>one</i> of the entries in the application. The award rate represents the probability of success for an <i>individual entry</i> in an application.  
+        </p>
+
+
     
-      <div class='tableauPlaceholder' id='viz1757102363641' style='position: relative'>
-        <noscript>
-          <a href='#'>
-            <img alt='How likely are we to win?' src='https://public.tableau.com/static/images/Ho/Howlikelyarewetowin/Howlikelyarewetowin/1_rss.png' style='border: none' />
-          </a>
-        </noscript>
-        <object class='tableauViz' style='display:none;'>
-          <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-          <param name='embed_code_version' value='3' />
-          <param name='site_root' value='' />
-          <param name='name' value='Howlikelyarewetowin&#47;Howlikelyarewetowin' />
-          <param name='tabs' value='no' />
-          <param name='toolbar' value='yes' />
-          <param name='static_image' value='https://public.tableau.com/static/images/Ho/Howlikelyarewetowin/Howlikelyarewetowin/1.png' />
-          <param name='animate_transition' value='yes' />
-          <param name='display_static_image' value='yes' />
-          <param name='display_spinner' value='yes' />
-          <param name='display_overlay' value='yes' />
-          <param name='display_count' value='yes' />
-          <param name='language' value='en-US' />
-        </object>
-      </div>
+  <script src="https://public.tableau.com/javascripts/api/viz_v1.js"></script>
+
+
     
-      <script type='text/javascript'>
-        var divElement = document.getElementById('viz1757102363641');
-        var vizElement = divElement.getElementsByTagName('object')[0];
-        vizElement.style.width='100%';
-        vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-      </script>
-    </section>
-
-    <p>We can see from our dashboard that the <strong>success rate</strong> for winning the lottery is <strong>6.44%</strong>, while the <strong>award rate</strong> is <strong>2.16%</strong>. The success rate represents the rate of applications that 
-      were successful in grating access to <i>one</i> of the preferred zones in the application. The award rate represents the probability that the <i>preferred</i> zone in your application was the one to w
-      dashboard shows the probability of winning the Enchantments lottery  It’s a helpful visual for setting realistic expectations when applying.
-    </p>
-
-<script src="https://public.tableau.com/javascripts/api/viz_v1.js"></script>
-
-
-
-
-
-
-            
-
-
-
-
-
-
-
-
-
-
-            
      <div class="text-center">
       <a href="index.html" class="btn-primary">← Back to Projects</a>
     </div>
+  
   </main>
 
 <footer>
