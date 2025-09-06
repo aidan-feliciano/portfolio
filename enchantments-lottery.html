@@ -313,11 +313,15 @@
       <p>
         The lottery opens on February 15th and closes On March 1st each year. Each application consists of three entries in order of preference. An individual entry comprises a zone, date, and group size. 
         The preference is determined by order in the application. For example, one application might look like:
-          <ol>
+      </p>
+          <ol style="padding-left: 2rem;">
             <li>Zone: Colchuck Zone, Entry Date: 5/15/2024, Group Size: 4</li>
             <li>Zone: Core Enchantment Zone, Entry Date: 8/7/2024, Group Size: 7</li>
             <li>Zone: Eightmile Zone, Entry Date: 7/1/2024, Group Size: 3</li>
           </ol>
+        <br>
+      
+      <p>    
         An applicant can only apply once, which greatly reduces the odds of an individual winning the lottery. However, winning the lottery is not completely up to chance; there are some factors that can dramatically 
         change your odds of wining the lottery. This project provides some critical insights of how to increase your odds to win the lottery, and it provides some recommendations for how to completely maximize your chances. 
       </p>
@@ -338,7 +342,8 @@
             <li><strong>Application Result</strong>: whether or not <i>any one</i> of the three entries in the application</i></li>
           </ul>
         
-        So, for the same example above, the data would look like this: <br>
+        So, for the same example above, the data would look like this: <br><br>
+    
           <table class="custom-table">
             <thead>
               <tr>
@@ -400,7 +405,7 @@
           <h3>Where Are the Enchantments?</h3>
           <p>
             This interactive map zooms in on the Alpine Lakes Wilderness and highlights the 5 permit zones within the Enchantments area: Colchuck, Core, Eightmile/Caroline, Snow, and Stuart. 
-            These zones represent the 1st, 2nd, and 3rd preferences that you can specify on your application.
+            These zones represent the 1st, 2nd, and 3rd preferences that you can specify on your application. Click on the arrows at the top to see where this area is with reference to Seattle and Western Washington. 
           </p>
         
           <div class='tableauPlaceholder' id='viz1757106679880' style='position: relative'>
@@ -476,7 +481,7 @@
         <br>
         <p>
           We can see from our dashboard that the <strong>success rate</strong> for winning the lottery is <strong>6.44%</strong>, while the <strong>award rate</strong> is <strong>2.16%</strong>. The success rate represents the rate of applications that 
-          were successful in grating access to <i>one</i> of the entries in the application. The award rate represents the probability of success for an <i>individual entry</i> in an application.  
+          were successful in grating access to <i>one</i> of the entries in the application. The award rate represents the probability of success for an <i>individual</i> entry in an application.  
         </p>
       </section>
 
@@ -484,7 +489,8 @@
         <h3>Exploring Odds Over Time</h3>
           
         <p>
-          Here we can begin to understand where we can set ourselves up with better odds of success. We can see that entries with preferred entry dates in October have the highest success at <strong>11.28%</strong>, while August provides the lowest.  
+          Here we can begin to understand how to increase our odds of success. We can see that entries with preferred entry dates in October have the highest success at <strong>11.28%</strong>, while August provides the lowest. 
+          (<i>click the full screen icon in the bottom right to expand the dashboard</i>)
         </p>
 
         <div class='tableauPlaceholder' id='viz1757108450011' style='position: relative'>
@@ -576,7 +582,8 @@
         <h3>What Group Sizes Work Best?</h3>
       
         <p>
-          We can see a clear pattern: smaller group sizes have a higher chance of success. For some zones, like the Eightmile/Caroline zone, solo applicants have a <strong>16.28%</strong> chance of winning. 
+          In this visual the colored bars (zones) are clustered by group size from 1 to 8. The darker opaque bars represent the odds of success for each group size, regardless of the zone. We can see a clear pattern: smaller group sizes 
+          have a higher chance of success. For some zones, like the Eightmile/Caroline zone, solo applicants have a <strong>16.28%</strong> chance of winning. 
         </p>
       
         <div class='tableauPlaceholder' id='viz1757170963875' style='position: relative'>
@@ -609,20 +616,70 @@
           vizElement.style.width = '100%';
           vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
         </script>
-      
+
+        <br>
         <p>
-          The success rate by zone remains fairly consistent across group sizes, but solo applicants see the most balanced outcomes across all zones. If flexibility allows, applying alone may significantly improve your odds.
+          So, if you want to maximize our chances of going to the more competitive zones like Core Enchantment or Colchuck, you would want to apply solo. If you don't want to go solo, then there are other ways we can guarantee success.
         </p>
       </section>
 
 
+      <section id="story-6" class="tableau-story">
+        <h3>Maximize Your Odds</h3>
+      
+        <p>
+          This dashboard gives you everything you need to maximize your chances of success for different combinations of zones, time of year, and group sizes. The table only shows instances where application entries had a over a 50% award rate.
+          You can click on the map to specify what zone you'd prefer, and the table will filter out for different scenarios for each zone. The Zone Size Pie chart and time charts work the same way. 
+        </p>
+      
+        <div class='tableauPlaceholder' id='viz1757174581390' style='position: relative'>
+          <noscript>
+            <a href='#'>
+              <img alt='Guarantee your choice (2)' src='https://public.tableau.com/static/images/Ma/MaximizeChances/Guaranteeyourchoice2/1_rss.png' style='border: none' />
+            </a>
+          </noscript>
+          <object class='tableauViz' style='display:none;'>
+            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+            <param name='embed_code_version' value='3' />
+            <param name='site_root' value='' />
+            <param name='name' value='MaximizeChances&#47;Guaranteeyourchoice2' />
+            <param name='tabs' value='no' />
+            <param name='toolbar' value='yes' />
+            <param name='static_image' value='https://public.tableau.com/static/images/Ma/MaximizeChances/Guaranteeyourchoice2/1.png' />
+            <param name='animate_transition' value='yes' />
+            <param name='display_static_image' value='yes' />
+            <param name='display_spinner' value='yes' />
+            <param name='display_overlay' value='yes' />
+            <param name='display_count' value='yes' />
+            <param name='language' value='en-US' />
+            <param name='filter' value='publish=yes' />
+          </object>
+        </div>
+      
+        <script type='text/javascript'>
+          var divElement = document.getElementById('viz1757174581390');
+          var vizElement = divElement.getElementsByTagName('object')[0];
+          if (divElement.offsetWidth > 800) {
+            vizElement.style.width = '100%';
+            vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+          } else if (divElement.offsetWidth > 500) {
+            vizElement.style.width = '100%';
+            vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+          } else {
+            vizElement.style.width = '100%';
+            vizElement.style.height = '1477px';
+          }
+          var scriptElement = document.createElement('script');
+          vizElement.parentNode.insertBefore(scriptElement, vizElement);
+        </script>
 
-
-
-
-
-
-
+        <br>
+        <p>
+          For example, let's say I only want to visit the Core Enchantment zone. If I click on the Colchuck zone on the map, then I wil see that there are two scenarios where I have over a 50% chance of my application entry being awarded:
+          Weekday: Wednesday or Saturday, Group Size: 1, Month: May. You can use this tool to fine tune your preferences and give yourself the best chance at success for exactly what you want. 
+        </p>
+        
+      </section>
 
 
 
