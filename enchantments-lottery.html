@@ -298,21 +298,20 @@
     <a href="experience.html">Education and Work Experience</a>
   </nav>
 
-<body>
   <main>
     <h1>The Enchantments Lottery - March 2025</h1>
 
     <h2>Background</h2>
       <p>
         The Enchantments is a region in Washington state's Cascade Mountain Range that is home to over 700 alpine lakes and ponds surrounded by a vast expanse of mountain peaks. It is one of the most popular
-        outdoor destinations for hikers, campers, rockclimbers, and anyone who enjoys the wilderness. As a result of the popularity, the Washington Trails Association introduced a lottery system to reduce the
+        outdoor destinations for hikers, campers, rock climbers, and anyone who enjoys the wilderness. As a result of the popularity, the Washington Trails Association introduced a lottery system to reduce the
         overcrowding that the region was seeing. 
       </p>
 
    <h2>How the Lottery Works</h2>
       <p>
         The lottery opens on February 15th and closes On March 1st each year. Each application consists of three entries in order of preference. An individual entry comprises a zone, date, and group size. 
-        The preference is determined by order in the application. For example, one application might look like:
+        The preference is determined by the order of each entry in the application. For example, one application might look like:
       </p>
       <br>
     
@@ -361,9 +360,9 @@
             <li><strong>Choice Number</strong>: the order ranking of each entry in the application (1, 2, and 3 per application)</li>
             <li><strong>Preferred Entry Date</strong>: the preferred entry date specified for each application entry</li>
             <li><strong>Preferred Zone</strong>: the preferred zone specified for each application entry</li>
-            <li><strong>Maximum Requested Group Size</strong>: the requested group each application entry</li>
+            <li><strong>Maximum Requested Group Size</strong>: the requested group size for each application entry</li>
             <li><strong>Choice Awarded?</strong>: whether or not the <i>individual</i> entry of the applicaiton was awarded</li>
-            <li><strong>Application Result</strong>: whether or not <i>any one</i> of the three entries in the application</i></li>
+            <li><strong>Application Result</strong>: whether or not <i>any one</i> of the three entries in the application was awarded</i></li>
           </ul>
         
         So, for the same example above, the data would look like this: <br><br>
@@ -388,7 +387,7 @@
                 <td>2024_44</td>
                 <td>2024_44_1</td>
                 <td>1</td>
-                <td>5/15/2025</td>
+                <td>5/15/2024</td>
                 <td>Colchuck Zone</td>
                 <td>4</td>
                 <td>Yes</td>
@@ -399,7 +398,7 @@
                 <td>2024_44</td>
                 <td>2024_44_2</td>
                 <td>2</td>
-                <td>8/7/2025</td>
+                <td>8/7/2024</td>
                 <td>Core Enchantment Zone</td>
                 <td>7</td>
                 <td>No</td>
@@ -410,7 +409,7 @@
                 <td>2024_44</td>
                 <td>2024_44_3</td>
                 <td>3</td>
-                <td>7/1/2025</td>
+                <td>7/1/2024</td>
                 <td>Eightmile Zone</td>
                 <td>3</td>
                 <td>No</td>
@@ -420,7 +419,7 @@
           </table>
 
         <br>
-        In this example, the first application entry was awarded, which makes the overal application successful. So, even though the second and third entries were not awarded, they are still part of a successful application.
+        In this example, the first application entry was awarded, which makes the overall application successful. So, even though the second and third entries were not awarded, they are still part of a successful application.
       </p>
 
       <h2>Analysis</h2>
@@ -461,9 +460,6 @@
             var vizElement = divElement.getElementsByTagName('object')[0];
             vizElement.style.width = '100%';
             vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-            var scriptElement = document.createElement('script');
-            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-            vizElement.parentNode.insertBefore(scriptElement, vizElement);
           </script>
         </section>
     
@@ -471,7 +467,7 @@
       <section id="story-2" class="tableau-story">
         <h3>What are the Overall Chances of Winning?</h3>
           <p>
-            This dashboard highlights the raw probailities of having a specific application entry and overall application approved. It also helps us understand the odds of success 
+            This dashboard highlights the raw probabilities of having a specific application entry and overall application approved. It also helps us understand the odds of success 
             over the time range that the Enchantments are open (5/15 to 10/31). <i>Click the fullscreen icon to view the entire dashboard.</i>
           </p>
       
@@ -504,15 +500,12 @@
             var vizElement = divElement.getElementsByTagName('object')[0];
             vizElement.style.width = '100%';
             vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-            var scriptElement = document.createElement('script');
-            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-            vizElement.parentNode.insertBefore(scriptElement, vizElement);
           </script>
         
         <br>
         <p>
           We can see from our dashboard that the <strong>success rate</strong> for winning the lottery is <strong>6.44%</strong>, while the <strong>award rate</strong> is <strong>2.16%</strong>. The success rate represents the rate of applications that 
-          were successful in grating access to <i>one</i> of the entries in the application. The award rate represents the probability of success for an <i>individual</i> entry in an application.  
+          were successful in granting access to <i>one</i> of the entries in the application. The award rate represents the probability of success for an <i>individual</i> entry in an application.  
         </p>
       </section>
 
@@ -521,7 +514,7 @@
           
         <p>
           Here we can begin to understand how to increase our odds of success. We can see that entries with preferred entry dates in October have the highest success at <strong>11.28%</strong>, while August provides the lowest. 
-          <i>Click the full screen icon in the bottom right to expand the dashboard.</i>
+          <i>Click the fullscreen icon in the bottom right to expand the dashboard.</i>
         </p>
 
         <div class='tableauPlaceholder' id='viz1757970807173' style='position: relative'>
@@ -553,20 +546,17 @@
           var vizElement = divElement.getElementsByTagName('object')[0];
           vizElement.style.width = '100%';
           vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-          var scriptElement = document.createElement('script');
-          scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-          vizElement.parentNode.insertBefore(scriptElement, vizElement);
         </script>
 
         <br>
         <p>
-          We also learn that entry dates on Sunday are most likely to be approved, with a <strong>3.5%</strong> award rate. We want to avoid applying for Fridays though, as we have the lowest chance of success on those days.   
+          We also learn that entry dates on Sundays are most likely to be approved, with a <strong>3.5%</strong> award rate. We want to avoid applying for Fridays though, as we have the lowest chance of success on those days.   
         </p>
         
       </section>
 
       <section id="story-4" class="tableau-story">
-        <h3>What Zones Should we Target?</h3>
+        <h3>What Zones Should We Target?</h3>
 
         <p>
           This visual helps us understand the individual award rates for different zones. The bar chart provides the probabilities, while the map gives reference to where each of these zones is. 
@@ -663,7 +653,7 @@
       
         <p>
           This dashboard gives you everything you need to maximize your chances of success for different combinations of zones, time of year, and group sizes. The table only shows instances where application entries had a over a 50% award rate.
-          You can click on the map to specify what zone you'd prefer, and the table will filter out for different scenarios for each zone. The Zone Size Pie chart and time charts work the same way. <i>Click the fullscreen icon to view the entire dashboard.</i>
+          You can click on the map to specify what zone you'd prefer, and the table will filter out for different scenarios for each zone. The Group Size bar chart and time charts work the same way. <i>Click the fullscreen icon to view the entire dashboard.</i>
         </p>
       
         <div class='tableauPlaceholder' id='viz1757976786291' style='position: relative'>
@@ -695,14 +685,11 @@
           var vizElement = divElement.getElementsByTagName('object')[0];
           vizElement.style.width = '100%';
           vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-          var scriptElement = document.createElement('script');
-          scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-          vizElement.parentNode.insertBefore(scriptElement, vizElement);
         </script>
 
         <br>
         <p>
-          For example, let's say I only want to visit the Core Enchantment zone. If I click on the Core Enchantment zone on the map, then I wil see that there are two scenarios where I have over a 50% chance of my application entry being awarded:
+          For example, let's say I only want to visit the Core Enchantment zone. If I click on the Core Enchantment zone on the map, then I will see that there are two scenarios where I have over a 50% chance of my application entry being awarded - 
           Weekday: Wednesday or Saturday, Group Size: 1, Month: May. You can use this tool to fine tune your preferences and give yourself the best chance at success for exactly what you want. 
         </p>
         
@@ -747,9 +734,6 @@
             var vizElement = divElement.getElementsByTagName('object')[0];
             vizElement.style.width = '100%';
             vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-            var scriptElement = document.createElement('script');
-            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-            vizElement.parentNode.insertBefore(scriptElement, vizElement);
           </script>
 
         <br>
@@ -766,7 +750,7 @@
         <h3>Final Recommendation</h3>
       
         <p>
-          Let's say we want to target "nice" days to go to the Enchantments: days where the historical aggregate average is over <strong>52 degrees Farenheit</strong> and the average precipitation is below <strong>0.03 inches</strong>. 
+          Let's say we want to target "nice" days to go to the Enchantments: days where the historical aggregate average is over <strong>52 degrees Fahrenheit</strong> and the average precipitation is below <strong>0.03 inches</strong>. 
           Below, we've filtered our above chart for only those days, and we've added the Success Rate by Group Size chart. Interacting with this visual can help us pick nice days where the overall award percentage is highest, like July 
           2nd and September 2nd, and see how we can maximize our chances for success. <i>Click the fullscreen icon to view the entire dashboard.</i>
         </p>
@@ -800,9 +784,6 @@
             var vizElement = divElement.getElementsByTagName('object')[0];
             vizElement.style.width = '100%';
             vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-            var scriptElement = document.createElement('script');
-            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-            vizElement.parentNode.insertBefore(scriptElement, vizElement);
           </script>
         
         <br>
@@ -813,11 +794,6 @@
         
       </section>
 
-        
-
-
-
-    
   <script src="https://public.tableau.com/javascripts/api/viz_v1.js"></script>
 
 
