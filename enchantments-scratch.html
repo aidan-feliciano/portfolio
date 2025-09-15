@@ -73,12 +73,11 @@
 
     <h2>How the Lottery Works</h2>
     <p>
-      The lottery opens on February 15 and closes on March 1 each year. Each applicant may submit one application with <strong>three ranked entries</strong> (zone, date, and group size).
+      The lottery opens on February 15th and closes on March 1st each year. Each applicant may submit one application with <strong>three ranked entries</strong> (zone, date, and group size).
       The ranking is determined by the order in the application. For example:
     </p>
 
     <table class="custom-table">
-      <caption>Example lottery application with three ranked entries</caption>
       <thead>
         <tr>
           <th>Zone</th>
@@ -105,6 +104,7 @@
       </tbody>
     </table>
 
+    <br>
     <p>
       An applicant can only apply once, which reduces the odds of any single application winning. However, success is not purely random—some choices dramatically change your chances.
       This project highlights how to improve your odds and recommends approaches to maximize them.
@@ -112,8 +112,8 @@
 
     <h2>Data Overview</h2>
     <p>
-      Two datasets power this analysis: (1) <strong>2024 Enchantments lottery statistics</strong> and (2) <strong>historical daily weather</strong> for the area.
-      Each observation in the lottery data represents an application entry (as in the example above) and includes:
+      There were two sets of data used in this project: the 2024 Enchantment lottery statistics, and the historical weather data for the area. Each observation in the lottery statistics represents an application 
+      (like the example above), and it is structured as follows:
     </p>
     <ul>
       <li><strong>Lottery Year</strong>: the year in which the application was submitted (2024 for all data shown here)</li>
@@ -129,7 +129,6 @@
 
     <p>The same example represented as rows in the dataset:</p>
     <table class="custom-table">
-      <caption>Example application represented as three dataset rows</caption>
       <thead>
         <tr>
           <th>Lottery Year</th>
@@ -180,8 +179,9 @@
       </tbody>
     </table>
 
+    <br>
     <p>
-      In this example, Entry #1 was awarded, so the overall application is successful—even though Entries #2 and #3 were not.
+      In this example, Entry #1 was awarded, so the overall application is successful, even though Entries #2 and #3 were not.
     </p>
 
     <h2>Analysis</h2>
@@ -189,8 +189,8 @@
     <section id="story-1" class="tableau-story">
       <h3>Where Are the Enchantments?</h3>
       <p>
-        This interactive map zooms in on the Alpine Lakes Wilderness and highlights five permit zones within the Enchantments area: Colchuck, Core Enchantments, Eightmile/Caroline, Snow, and Stuart.
-        These zones correspond to the ranked preferences you can specify on your application. Use the story navigation to orient the area relative to Seattle and Western Washington.
+        This interactive map zooms in on the Alpine Lakes Wilderness and highlights the 5 permit zones within the Enchantments area: Colchuck, Core, Eightmile/Caroline, Snow, and Stuart. These zones represent the 1st, 
+        2nd, and 3rd preferences that you can specify on your application. Click on the arrows at the top to see where this area is with reference to Seattle and Western Washington.
       </p>
 
       <div class='tableauPlaceholder' id='viz1757977330329' style='position: relative'>
@@ -231,7 +231,7 @@
       <h3>What Are the Overall Chances of Winning?</h3>
       <p>
         This dashboard highlights the raw probabilities of having a specific application entry awarded and of the overall application succeeding.
-        It also shows how odds vary across the operating season (5/15–10/31). <em>Click the fullscreen icon to view the entire dashboard.</em>
+        It also shows how odds vary across the operating season (5/15 to 10/31). <em>Click the fullscreen icon to view the entire dashboard.</em>
       </p>
 
       <div class='tableauPlaceholder' id='viz1757972195538' style='position: relative'>
@@ -267,6 +267,7 @@
         })();
       </script>
 
+      <br>
       <p>
         From this view, the <strong>success rate</strong> (any entry awarded) is <strong>6.44%</strong>, while the <strong>award rate</strong> (individual entry awarded) is <strong>2.16%</strong>.
       </p>
@@ -312,6 +313,7 @@
         })();
       </script>
 
+      <br>
       <p>
         Sundays show the highest award rate at <strong>3.5%</strong>, while Fridays are the most competitive.
       </p>
@@ -320,7 +322,7 @@
     <section id="story-4" class="tableau-story">
       <h3>What Zones Should We Target?</h3>
       <p>
-        This view shows individual award rates by zone alongside a reference map.
+        This view helps us understand the individual award rates by zone alongside a reference map
       </p>
 
       <div class='tableauPlaceholder' id='viz1757172403020' style='position: relative'>
@@ -356,6 +358,7 @@
         })();
       </script>
 
+      <br>
       <p>
         Eightmile/Caroline provides the best odds at ~<strong>12%</strong>, roughly six percentage points above Stuart. Colchuck and Core Enchantments are more competitive,
         but we can still improve our chances there through timing and group size.
@@ -402,8 +405,9 @@
         })();
       </script>
 
+      <br>
       <p>
-        If you aim for Core Enchantments or Colchuck, applying solo meaningfully improves your chances. If you prefer not to go solo, the next section shows ways to increase odds through timing and zone selection.
+        If you aim for Core Enchantments or Colchuck, applying solo singificantly improves your chances. If you prefer not to go solo, the next section shows ways to increase odds through timing and zone selection.
       </p>
     </section>
 
@@ -447,8 +451,9 @@
         })();
       </script>
 
+      <br>
       <p>
-        Example: If you only want Core Enchantments, selecting that zone shows two scenarios with &gt;50% entry award probability: <strong>Day: Wednesday or Saturday, Group Size: 1, Month: May</strong>.
+        Example: If you only want Core Enchantments, selecting that zone shows two scenarios with &gt;50% entry award probability: Weekday: Wednesday or Saturday, Group Size: 1, Month: May.
         Use the controls to fine-tune preferences for your exact goal.
       </p>
     </section>
@@ -456,7 +461,7 @@
     <section id="story-7" class="tableau-story">
       <h3>Adding Weather Data</h3>
       <p>
-        To target comfortable conditions, we incorporated daily historical averages (1981–present): precipitation (inches) and low/average/high temperatures (°F). We averaged each calendar day across years and
+        To target comfortable conditions, we incorporated daily historical averages (1981–present) from the other dataset: precipitation (inches) and low/average/high temperatures (°F). We averaged each calendar day across years and
         compared those values to 2024 lottery outcomes to explore relationships. These are long-term <em>averages</em>, not forecasts; actual conditions vary.
       </p>
 
@@ -493,6 +498,7 @@
         })();
       </script>
 
+      <br>
       <p>
         Unsurprisingly, award odds move with conditions: applications are most competitive (lower odds) on historically warmer, drier days when more people apply.
       </p>
@@ -538,6 +544,7 @@
         })();
       </script>
 
+      <br>
       <p>
         For example, selecting July 2 (≈12% award rate historically) suggests Eightmile (group size 4) or Stuart (group size 5) to reach ~50% entry award odds for that date.
       </p>
@@ -556,9 +563,6 @@
         <li>Use the “Maximize Your Odds” view to identify &gt;50% scenarios for your exact constraints.</li>
         <li>Remember: historical weather is not a forecast—always plan for variance.</li>
       </ul>
-      <p>
-        Questions or ideas for additional slices (e.g., holiday effects, rolling‑window weather anomalies)? I’m happy to extend the analysis.
-      </p>
     </section>
 
     <div class="text-center">
